@@ -4,11 +4,13 @@ import { ChevronDown, Mail, Phone, MapPin, Download, Github, Linkedin, Sparkles,
 import { Button } from './ui/button';
 import { t, getCurrentTheme, getCurrentLanguage } from './utils/i18n';
 import profileImage from '../assets/profile.png';
+import init from '../assets/za.png';
 
 export default function HeroSection() {
   const [text, setText] = useState('');
   const [theme, setTheme] = useState('dark');
   const [language, setLanguage] = useState('en');
+  const [imageError, setImageError] = useState(false);
   const titleRole = t('title_role');
   
   useEffect(() => {
@@ -115,8 +117,25 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className={`flex items-center gap-2 ${themeClasses.textCyan} font-medium tracking-wider uppercase text-sm`}
+                className={`flex items-center gap-3 ${themeClasses.textCyan} font-medium tracking-wider uppercase text-sm`}
               >
+                {/* ZA Logo Image */}
+                <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg vibrant-glow">
+                  <img 
+                    src={init}
+                    alt="ZA Logo"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback if image doesn't load
+                      e.target.style.display = 'none';
+                      e.target.parentElement.innerHTML = `
+                        <div class="w-full h-full bg-gradient-to-r from-cyan-400 to-purple-400 flex items-center justify-center rounded-lg">
+                          <span class="text-white font-bold text-sm">ZA</span>
+                        </div>
+                      `;
+                    }}
+                  />
+                </div>
                 <Sparkles className="w-4 h-4" />
                 {t('welcome')}
               </motion.div>
@@ -221,22 +240,21 @@ export default function HeroSection() {
                   <div className={`w-full h-full ${themeClasses.avatarGlow} rounded-full flex items-center justify-center`}>
                     <div className={`w-64 h-64 ${themeClasses.gradient} rounded-full flex items-center justify-center border-4 ${
                       theme === 'dark' ? 'border-white/20' : 'border-white/50'
-                    }`}>
-                      {/* <span className={`text-6xl font-bold bg-gradient-to-r ${
-                        theme === 'dark' 
-                          ? 'from-cyan-400 to-purple-400' 
-                          : 'from-cyan-600 to-purple-600'
-                      } bg-clip-text text-transparent`}>ZA</span> */}
-
-                      <img 
-                                              src={profileImage}
-                                              alt="Zainab Adnan"
-                                              className="w-full h-full object-cover rounded-full"
-                                              onError={(e) => {
-                                                e.target.style.display = 'none';
-                                                e.target.nextSibling.style.display = 'flex';
-                                              }}
-                                            />
+                    } relative overflow-hidden`}>
+                      {!imageError ? (
+                        <img 
+                          src={profileImage}
+                          alt="Zainab Adnan"
+                          className="w-full h-full object-cover rounded-full"
+                          onError={() => setImageError(true)}
+                        />
+                      ) : (
+                        <span className={`text-6xl font-bold bg-gradient-to-r ${
+                          theme === 'dark' 
+                            ? 'from-cyan-400 to-purple-400' 
+                            : 'from-cyan-600 to-purple-600'
+                        } bg-clip-text text-transparent`}>ZA</span>
+                      )}
                     </div>
                   </div>
                 </div>
