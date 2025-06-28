@@ -1,4 +1,4 @@
-// Simple i18n implementation for portfolio
+// Enhanced i18n implementation with complete translations
 const translations = {
   en: {
     // Navigation
@@ -26,6 +26,11 @@ const translations = {
     education_subtitle: "Continuous learning journey from hospitality management to cutting-edge AI and machine learning",
     ongoing: "Ongoing",
     completed: "Completed",
+    currently_studying: "Currently Studying",
+    graduated: "Graduated",
+    graduating_2024: "Graduating 2024",
+    graduated_2023: "Graduated 2023",
+    graduated_2006: "Graduated 2006",
     
     // Skills Section
     skills_expertise: "Skills & Expertise",
@@ -49,6 +54,10 @@ const translations = {
     available_stores: "Available on App Store & Google Play",
     no_projects_found: "No Projects Found",
     try_different_filter: "Try selecting a different filter to see more projects.",
+    filter: "Filter",
+    website: "Website",
+    mobile_app: "Mobile App",
+    application: "Application",
     
     // Contact Section
     lets_connect: "Let's Connect",
@@ -66,6 +75,11 @@ const translations = {
     sending: "Sending...",
     message_sent_success: "Message sent successfully! I'll get back to you soon.",
     message_send_error: "Failed to send message. Please try again or contact me directly.",
+    get_in_touch_description: "Ready to build something extraordinary together?",
+    send_an_email: "Send an email",
+    whatsapp: "WhatsApp",
+    github: "GitHub",
+    linkedin: "LinkedIn",
     
     // Job Titles and Companies
     regional_area_manager: "Regional Area Manager",
@@ -107,7 +121,115 @@ const translations = {
     english: "English",
     swedish: "Swedish",
     french: "French",
-    spanish: "Spanish"
+    spanish: "Spanish",
+    
+    // Additional UI Elements
+    show: "Show",
+    entries: "entries",
+    previous: "Previous",
+    next: "Next",
+    made_with: "Crafted with passion using React & cutting-edge technologies",
+    coming_soon: "Coming Soon",
+    live: "Live",
+    
+    // Theme Toggle
+    light_mode: "Light Mode",
+    dark_mode: "Dark Mode",
+    theme: "Theme",
+    
+    // Additional Contact Info
+    phone_sweden: "Phone (Sweden)",
+    
+    // Error Messages
+    no_ssl_detected: "No SSL Detected",
+    
+    // Experience Section - Job Highlights
+    direct_responsibility: "Direct responsibility for UAE (Dubai, Abu Dhabi & Al Ain), Qatar & Jordan",
+    conducted_visits: "Conducted periodical visits to stores within functional area to build relationships",
+    trained_coached: "Trained and coached front-liners to optimize service and customer satisfaction",
+    developed_improvement: "Developed improvement plans with operations to achieve brand/store targets",
+    organized_events: "Organized events for corporate clients",
+    handled_weddings: "Handled weddings, staff parties, gala dinners, desert safaris, tours",
+    communicated_clients: "Communicated with clients and sent proposals for event enquiries",
+    top_performer: "Top performer in leasing for year 2009",
+    leading_team: "Leading the leasing team in the head office",
+    created_policy: "Created leasing policy and procedures for the department",
+    conducted_training: "Conducted training programs for staff",
+    provided_it_help: "Provided IT-Help for hotel guests",
+    guest_recognition: "Involved in guest recognition program",
+    
+    // Education Section - Additional
+    advanced_artificial_intelligence: "Advanced artificial intelligence and machine learning development",
+    specialized_machine_learning: "Specialized machine learning algorithms and data science",
+    full_stack_net: "Full-stack .NET development and enterprise applications",
+    mobile_web_development: "Mobile and web application development",
+    comprehensive_development: "Comprehensive mobile and web development program",
+    international_hospitality: "International hospitality administration and business management",
+    
+    // Time periods
+    december_2011_june_2019: "December 2011 – June 2019",
+    november_2010_december_2011: "November 2010 – December 2011",
+    december_2007_may_2010: "December 2007 – May 2010",
+    october_2006_november_2007: "October 2006 – November 2007",
+    period_2024_2025: "2024 - 2025",
+    period_ongoing: "Ongoing",
+    period_completed: "Completed",
+    
+    // Skills
+    dot_net: ".NET",
+    javascript: "JavaScript",
+    react: "React",
+    flutter: "Flutter",
+    ai_ml: "AI/ML",
+    python: "Python",
+    dart: "Dart",
+    swift: "Swift",
+    kotlin: "Kotlin",
+    cpp: "C++",
+    sql: "SQL",
+    oracle: "Oracle",
+    
+    // Project descriptions
+    ai_customer_service_desc: "Intelligent customer service platform powered by machine learning algorithms for automated response generation, sentiment analysis, and real-time chat support.",
+    giggli_autism_desc: "Educational mobile app designed to support children with autism through interactive learning modules, progress tracking, and personalized therapy activities.",
+    cosmetics_checker_desc: "Mobile app that helps users check cosmetic ingredients for safety, compatibility with skin types, and potential allergen warnings.",
+    food_checker_desc: "Food ingredient analysis app that provides detailed nutritional information, allergen warnings, and dietary compatibility checks.",
+    ecommerce_platform_desc: "Comprehensive e-commerce solution with inventory management, order processing, customer analytics, and multi-payment gateway integration.",
+    real_estate_desc: "Property management platform with tenant tracking, lease management, maintenance scheduling, and comprehensive financial reporting.",
+    ml_dashboard_desc: "Advanced data visualization dashboard for ML model predictions with real-time analytics, performance metrics, and automated reporting.",
+    hotel_management_desc: "Complete hospitality management solution with booking system, guest services, housekeeping coordination, and revenue optimization.",
+    mobile_customer_desc: "Enterprise mobile application for customer service representatives with offline support, data synchronization, and real-time notifications.",
+    
+    // Additional Contact
+    whatsapp_number: "+971 55 37 202 37",
+    sweden_phone: "+46 73 695 31 02",
+    
+    // Navigation tooltips
+    tooltip_home: "Go to Home",
+    tooltip_experience: "View Experience",
+    tooltip_education: "See Education",
+    tooltip_skills: "Check Skills",
+    tooltip_projects: "Browse Projects",
+    tooltip_contact: "Contact Me",
+    
+    // Loading states
+    loading: "Loading...",
+    loading_projects: "Loading projects...",
+    
+    // Common actions
+    view: "View",
+    edit: "Edit",
+    delete: "Delete",
+    save: "Save",
+    cancel: "Cancel",
+    close: "Close",
+    open: "Open",
+    
+    // Status indicators
+    active: "Active",
+    inactive: "Inactive",
+    pending: "Pending",
+    activated: "Activated"
   },
   
   ar: {
@@ -136,6 +258,11 @@ const translations = {
     education_subtitle: "رحلة تعلم مستمرة من إدارة الضيافة إلى الذكاء الاصطناعي والتعلم الآلي المتطور",
     ongoing: "مستمر",
     completed: "مكتمل",
+    currently_studying: "أدرس حالياً",
+    graduated: "متخرجة",
+    graduating_2024: "تخرج 2024",
+    graduated_2023: "تخرجت 2023",
+    graduated_2006: "تخرجت 2006",
     
     // Skills Section
     skills_expertise: "المهارات والخبرات",
@@ -159,6 +286,10 @@ const translations = {
     available_stores: "متاح على متجر التطبيقات وجوجل بلاي",
     no_projects_found: "لم يتم العثور على مشاريع",
     try_different_filter: "جرب تحديد مرشح مختلف لرؤية المزيد من المشاريع.",
+    filter: "تصفية",
+    website: "موقع ويب",
+    mobile_app: "تطبيق هاتف",
+    application: "تطبيق",
     
     // Contact Section
     lets_connect: "لنتواصل",
@@ -176,13 +307,18 @@ const translations = {
     sending: "جاري الإرسال...",
     message_sent_success: "تم إرسال الرسالة بنجاح! سأرد عليك قريباً.",
     message_send_error: "فشل في إرسال الرسالة. يرجى المحاولة مرة أخرى أو التواصل معي مباشرة.",
+    get_in_touch_description: "مستعدة لبناء شيء استثنائي معاً؟",
+    send_an_email: "إرسال بريد إلكتروني",
+    whatsapp: "واتساب",
+    github: "جيت هاب",
+    linkedin: "لينكد إن",
     
-    // Job Titles and Companies (keeping English for company names)
+    // Job Titles and Companies
     regional_area_manager: "مديرة منطقة إقليمية",
     senior_sales_executive: "مديرة مبيعات أولى",
     team_leader: "قائدة فريق",
     front_desk_trainer: "مدربة استقبال وعلاقات الضيوف",
-    alshaya_company: "شركة الشايع",
+    alshaya_company: "شركة الشايع المحدودة",
     arabian_adventures: "مغامرات عربية (طيران الإمارات)",
     hamptons_international: "هامبتونز الدولية",
     ritz_carlton: "فندق ريتز كارلتون",
@@ -194,6 +330,19 @@ const translations = {
     mobile_web_developer: "مطور تطبيقات - الهاتف المحمول والويب",
     hospitality_diploma: "دبلوم عالي في إدارة الفنادق والضيافة",
     
+    // Schools
+    iths: "المعهد التقني العالي",
+    teknik_hogskolan: "كلية التقنية",
+    kyh_hogskolan: "كلية KYH",
+    sti_hogskolan: "كلية STI",
+    it_hogskolan: "كلية تقنية المعلومات",
+    cesar_ritz: "مركز جامعة سيزار ريتز",
+    
+    // Locations
+    dubai_uae: "دبي، دولة الإمارات العربية المتحدة",
+    stockholm_sweden_full: "ستوكهولم، السويد",
+    brig_switzerland: "بريغ، سويسرا",
+    
     // Skills Categories
     team_leadership: "قيادة الفريق",
     regional_management: "الإدارة الإقليمية",
@@ -204,7 +353,115 @@ const translations = {
     english: "الإنجليزية",
     swedish: "السويدية",
     french: "الفرنسية",
-    spanish: "الإسبانية"
+    spanish: "الإسبانية",
+    
+    // Additional UI Elements
+    show: "عرض",
+    entries: "عناصر",
+    previous: "السابق",
+    next: "التالي",
+    made_with: "صُنع بشغف باستخدام React وأحدث التقنيات",
+    coming_soon: "قريباً",
+    live: "مباشر",
+    
+    // Theme Toggle
+    light_mode: "الوضع الفاتح",
+    dark_mode: "الوضع الداكن",
+    theme: "المظهر",
+    
+    // Additional Contact Info
+    phone_sweden: "الهاتف (السويد)",
+    
+    // Error Messages
+    no_ssl_detected: "لم يتم اكتشاف SSL",
+    
+    // Experience Section - Job Highlights
+    direct_responsibility: "المسؤولية المباشرة عن الإمارات (دبي، أبو ظبي والعين) وقطر والأردن",
+    conducted_visits: "إجراء زيارات دورية للمتاجر في المنطقة الوظيفية لبناء العلاقات",
+    trained_coached: "تدريب وتوجيه العاملين في الخطوط الأمامية لتحسين الخدمة ورضا العملاء",
+    developed_improvement: "وضع خطط التحسين مع العمليات لتحقيق أهداف العلامة التجارية/المتجر",
+    organized_events: "تنظيم الفعاليات للعملاء المؤسسيين",
+    handled_weddings: "التعامل مع حفلات الزفاف والحفلات الجماعية وعشاء الجالا ورحلات الصحراء والجولات",
+    communicated_clients: "التواصل مع العملاء وإرسال المقترحات لاستفسارات الفعاليات",
+    top_performer: "أفضل أداء في التأجير لعام 2009",
+    leading_team: "قيادة فريق التأجير في المكتب الرئيسي",
+    created_policy: "إنشاء سياسة وإجراءات التأجير للقسم",
+    conducted_training: "إجراء برامج تدريبية للموظفين",
+    provided_it_help: "تقديم المساعدة التقنية لنزلاء الفندق",
+    guest_recognition: "المشاركة في برنامج تقدير النزلاء",
+    
+    // Education Section - Additional
+    advanced_artificial_intelligence: "تطوير متقدم للذكاء الاصطناعي والتعلم الآلي",
+    specialized_machine_learning: "خوارزميات التعلم الآلي المتخصصة وعلوم البيانات",
+    full_stack_net: "تطوير .NET الشامل وتطبيقات المؤسسات",
+    mobile_web_development: "تطوير تطبيقات الهاتف المحمول والويب",
+    comprehensive_development: "برنامج شامل لتطوير الهاتف المحمول والويب",
+    international_hospitality: "إدارة الضيافة الدولية وإدارة الأعمال",
+    
+    // Time periods
+    december_2011_june_2019: "ديسمبر 2011 - يونيو 2019",
+    november_2010_december_2011: "نوفمبر 2010 - ديسمبر 2011",
+    december_2007_may_2010: "ديسمبر 2007 - مايو 2010",
+    october_2006_november_2007: "أكتوبر 2006 - نوفمبر 2007",
+    period_2024_2025: "2024 - 2025",
+    period_ongoing: "مستمر",
+    period_completed: "مكتمل",
+    
+    // Skills
+    dot_net: ".NET",
+    javascript: "جافا سكريبت",
+    react: "ريأكت",
+    flutter: "فلاتر",
+    ai_ml: "ذكاء اصطناعي/تعلم آلي",
+    python: "بايثون",
+    dart: "دارت",
+    swift: "سويفت",
+    kotlin: "كوتلن",
+    cpp: "سي++",
+    sql: "SQL",
+    oracle: "أوراكل",
+    
+    // Project descriptions
+    ai_customer_service_desc: "منصة خدمة عملاء ذكية مدعومة بخوارزميات التعلم الآلي لتوليد الاستجابات التلقائية وتحليل المشاعر ودعم الدردشة المباشرة.",
+    giggli_autism_desc: "تطبيق تعليمي للهاتف المحمول مصمم لدعم الأطفال المصابين بالتوحد من خلال وحدات التعلم التفاعلية وتتبع التقدم والأنشطة العلاجية المخصصة.",
+    cosmetics_checker_desc: "تطبيق هاتف محمول يساعد المستخدمين في فحص مكونات مستحضرات التجميل للسلامة والتوافق مع أنواع البشرة وتحذيرات المواد المثيرة للحساسية.",
+    food_checker_desc: "تطبيق تحليل مكونات الطعام الذي يوفر معلومات غذائية مفصلة وتحذيرات من المواد المثيرة للحساسية وفحوصات التوافق الغذائي.",
+    ecommerce_platform_desc: "حل شامل للتجارة الإلكترونية مع إدارة المخزون ومعالجة الطلبات وتحليلات العملاء وتكامل بوابات الدفع المتعددة.",
+    real_estate_desc: "منصة إدارة العقارات مع تتبع المستأجرين وإدارة عقود الإيجار وجدولة الصيانة والتقارير المالية الشاملة.",
+    ml_dashboard_desc: "لوحة معلومات متقدمة لتصور البيانات لتوقعات نماذج التعلم الآلي مع التحليلات المباشرة ومقاييس الأداء والتقارير التلقائية.",
+    hotel_management_desc: "حل شامل لإدارة الضيافة مع نظام الحجز وخدمات النزلاء وتنسيق التدبير المنزلي وتحسين الإيرادات.",
+    mobile_customer_desc: "تطبيق هاتف محمول للمؤسسات لممثلي خدمة العملاء مع الدعم غير المتصل ومزامنة البيانات والإشعارات المباشرة.",
+    
+    // Additional Contact
+    whatsapp_number: "+971 55 37 202 37",
+    sweden_phone: "+46 73 695 31 02",
+    
+    // Navigation tooltips
+    tooltip_home: "الذهاب للرئيسية",
+    tooltip_experience: "عرض الخبرة",
+    tooltip_education: "مشاهدة التعليم",
+    tooltip_skills: "فحص المهارات",
+    tooltip_projects: "تصفح المشاريع",
+    tooltip_contact: "اتصل بي",
+    
+    // Loading states
+    loading: "جاري التحميل...",
+    loading_projects: "تحميل المشاريع...",
+    
+    // Common actions
+    view: "عرض",
+    edit: "تحرير",
+    delete: "حذف",
+    save: "حفظ",
+    cancel: "إلغاء",
+    close: "إغلاق",
+    open: "فتح",
+    
+    // Status indicators
+    active: "نشط",
+    inactive: "غير نشط",
+    pending: "معلق",
+    activated: "مفعل"
   },
   
   sv: {
@@ -233,6 +490,11 @@ const translations = {
     education_subtitle: "Kontinuerlig inlärningsresa från hotellmanagement till banbrytande AI och maskininlärning",
     ongoing: "Pågående",
     completed: "Avslutad",
+    currently_studying: "Studerar för närvarande",
+    graduated: "Examinerad",
+    graduating_2024: "Examen 2024",
+    graduated_2023: "Examen 2023",
+    graduated_2006: "Examen 2006",
     
     // Skills Section
     skills_expertise: "Färdigheter & Expertis",
@@ -256,6 +518,10 @@ const translations = {
     available_stores: "Tillgänglig på App Store & Google Play",
     no_projects_found: "Inga projekt hittades",
     try_different_filter: "Prova att välja ett annat filter för att se fler projekt.",
+    filter: "Filter",
+    website: "Webbsida",
+    mobile_app: "Mobilapp",
+    application: "Applikation",
     
     // Contact Section
     lets_connect: "Låt oss koppla ihop",
@@ -273,6 +539,41 @@ const translations = {
     sending: "Skickar...",
     message_sent_success: "Meddelandet skickades framgångsrikt! Jag återkommer snart.",
     message_send_error: "Misslyckades att skicka meddelandet. Försök igen eller kontakta mig direkt.",
+    get_in_touch_description: "Redo att bygga något extraordinärt tillsammans?",
+    send_an_email: "Skicka ett e-post",
+    whatsapp: "WhatsApp",
+    github: "GitHub",
+    linkedin: "LinkedIn",
+    
+    // Job Titles and Companies
+    regional_area_manager: "Regional Områdeschef",
+    senior_sales_executive: "Senior Säljchef",
+    team_leader: "Teamledare",
+    front_desk_trainer: "Receptionstränare & Gästrelationer",
+    alshaya_company: "M.H. Alshaya Co. L.L.C",
+    arabian_adventures: "Arabian Adventures (Emirates Airlines)",
+    hamptons_international: "Hamptons International",
+    ritz_carlton: "Ritz Carlton Hotel",
+    
+    // Education Programs
+    ai_developer_program: "AI-utvecklarprogram",
+    machine_learning_program: "Maskininlärningsprogram",
+    net_developer: ".Net-utvecklare",
+    mobile_web_developer: "Applikationsutvecklare - Mobil & Webb",
+    hospitality_diploma: "Högre diplom i Hotell & Gästfrihet Management",
+    
+    // Schools
+    iths: "ITHS",
+    teknik_hogskolan: "Teknik Högskolan",
+    kyh_hogskolan: "KYH Högskolan",
+    sti_hogskolan: "STI Högskolan",
+    it_hogskolan: "IT-Högskolan",
+    cesar_ritz: "University Center César Ritz",
+    
+    // Locations
+    dubai_uae: "Dubai, Förenade Arabemiraten",
+    stockholm_sweden_full: "Stockholm, Sverige",
+    brig_switzerland: "Brig, Schweiz",
     
     // Skills Categories
     team_leadership: "Teamledarskap",
@@ -284,498 +585,128 @@ const translations = {
     english: "Engelska",
     swedish: "Svenska",
     french: "Franska",
-    spanish: "Spanska"
-  },
-  
-  es: {
-    // Navigation - Spanish
-    home: "Inicio",
-    experience: "Experiencia",
-    education: "Educación",
-    skills: "Habilidades",
-    projects: "Proyectos",
-    contact: "Contacto",
+    spanish: "Spanska",
     
-    // Hero Section
-    welcome: "Bienvenido a mi espacio digital",
-    title_role: "Desarrolladora Sofisticada y Gerente Regional",
-    hero_description: "Conectando la excelencia empresarial con tecnología de vanguardia. Desde gestionar operaciones regionales en UAE, Qatar y Jordania hasta dominar el desarrollo full-stack con IA y aprendizaje automático.",
-    download_cv: "Descargar CV",
-    get_in_touch: "Ponerse en contacto",
-    scroll_explore: "Desplázate para explorar",
+    // Additional UI Elements
+    show: "Visa",
+    entries: "poster",
+    previous: "Föregående",
+    next: "Nästa",
+    made_with: "Skapad med passion med React & banbrytande teknologier",
+    coming_soon: "Kommer snart",
+    live: "Live",
     
-    // Experience Section
-    professional_journey: "Trayectoria profesional",
-    experience_subtitle: "Casi dos décadas de excelencia en liderazgo en los sectores de hospitalidad, bienes raíces y retail",
+    // Theme Toggle
+    light_mode: "Ljust läge",
+    dark_mode: "Mörkt läge",
+    theme: "Tema",
     
-    // Education Section
-    academic_excellence: "Excelencia académica",
-    education_subtitle: "Viaje de aprendizaje continuo desde gestión hotelera hasta IA y aprendizaje automático de vanguardia",
-    ongoing: "En curso",
-    completed: "Completado",
+    // Additional Contact Info
+    phone_sweden: "Telefon (Sverige)",
     
-    // Skills Section
-    skills_expertise: "Habilidades y Experiencia",
-    skills_subtitle: "Una mezcla única de destreza técnica y excelencia en liderazgo",
-    programming_languages: "Lenguajes de Programación",
-    frameworks_technologies: "Frameworks y Tecnologías",
-    leadership_management: "Liderazgo y Gestión",
-    languages: "Idiomas",
+    // Error Messages
+    no_ssl_detected: "Ingen SSL upptäckt",
     
-    // Projects Section
-    featured_projects: "Proyectos destacados",
-    projects_subtitle: "Mostrando soluciones innovadoras desde plataformas web hasta aplicaciones móviles disponibles en App Store y Google Play",
-    all: "Todos",
-    mobile_apps: "Apps Móviles",
-    web_apps: "Apps Web",
-    featured: "Destacado",
-    visit_site: "Visitar sitio",
-    code: "Código",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "Disponible en App Store y Google Play",
-    no_projects_found: "No se encontraron proyectos",
-    try_different_filter: "Prueba seleccionar un filtro diferente para ver más proyectos.",
+    // Experience Section - Job Highlights
+    direct_responsibility: "Direkt ansvar för UAE (Dubai, Abu Dhabi & Al Ain), Qatar & Jordanien",
+    conducted_visits: "Genomförde periodiska besök till butiker inom funktionsområdet för att bygga relationer",
+    trained_coached: "Utbildade och coachade frontpersonal för att optimera service och kundnöjdhet",
+    developed_improvement: "Utvecklade förbättringsplaner med verksamheten för att uppnå varumärkes-/butiksmål",
+    organized_events: "Organiserade evenemang för företagskunder",
+    handled_weddings: "Hanterade bröllop, personalfester, galamiddagar, ökensafaris, turer",
+    communicated_clients: "Kommunicerade med kunder och skickade förslag för eventförfrågningar",
+    top_performer: "Topppresterande inom uthyrning för år 2009",
+    leading_team: "Ledde uthyrningsteamet på huvudkontoret",
+    created_policy: "Skapade uthyrningspolicy och procedurer för avdelningen",
+    conducted_training: "Genomförde utbildningsprogram för personal",
+    provided_it_help: "Tillhandahöll IT-hjälp för hotellets gäster",
+    guest_recognition: "Involverad i gästerkännande program",
     
-    // Contact Section
-    lets_connect: "Conectémonos",
-    contact_subtitle: "Listo para aportar soluciones innovadoras a tu próximo proyecto. Discutamos cómo podemos trabajar juntos.",
-    email: "Correo electrónico",
-    phone: "Teléfono",
-    location: "Ubicación",
-    stockholm_sweden: "Estocolmo, Suecia",
-    download_full_cv: "Descargar CV completo",
-    send_message: "Enviar mensaje",
-    your_name: "Tu nombre",
-    your_email: "Tu correo electrónico",
-    subject: "Asunto",
-    your_message: "Tu mensaje",
-    sending: "Enviando...",
-    message_sent_success: "¡Mensaje enviado exitosamente! Te responderé pronto.",
-    message_send_error: "Error al enviar el mensaje. Inténtalo de nuevo o contáctame directamente.",
+    // Education Section - Additional
+    advanced_artificial_intelligence: "Avancerad artificiell intelligens och maskininlärningsutveckling",
+    specialized_machine_learning: "Specialiserade maskininlärningsalgoritmer och datavetenskap",
+    full_stack_net: "Fullstack .NET-utveckling och företagsapplikationer",
+    mobile_web_development: "Mobil- och webbutveckling",
+    comprehensive_development: "Omfattande mobil- och webbutvecklingsprogram",
+    international_hospitality: "Internationell gästfrihet administration och företagsledning",
     
-    // Skills Categories
-    team_leadership: "Liderazgo de Equipo",
-    regional_management: "Gestión Regional",
-    training_development: "Capacitación y Desarrollo",
-    customer_relations: "Relaciones con Clientes",
-    business_strategy: "Estrategia Empresarial",
-    arabic: "Árabe",
-    english: "Inglés",
-    swedish: "Sueco",
-    french: "Francés",
-    spanish: "Español"
-  },
-  
-  de: {
-    // Navigation - German
-    home: "Startseite",
-    experience: "Erfahrung",
-    education: "Bildung",
-    skills: "Fähigkeiten",
-    projects: "Projekte",
-    contact: "Kontakt",
+    // Time periods
+    december_2011_june_2019: "December 2011 – Juni 2019",
+    november_2010_december_2011: "November 2010 – December 2011",
+    december_2007_may_2010: "December 2007 – Maj 2010",
+    october_2006_november_2007: "Oktober 2006 – November 2007",
+    period_2024_2025: "2024 - 2025",
+    period_ongoing: "Pågående",
+    period_completed: "Avslutad",
     
-    // Hero Section
-    welcome: "Willkommen in meinem digitalen Raum",
-    title_role: "Hochqualifizierte Entwicklerin & Regional Managerin",
-    hero_description: "Verbindung von Geschäftsexzellenz mit modernster Technologie. Von der Leitung regionaler Operationen in UAE, Katar und Jordanien bis zur Beherrschung der Full-Stack-Entwicklung mit KI und maschinellem Lernen.",
-    download_cv: "Lebenslauf herunterladen",
-    get_in_touch: "Kontakt aufnehmen",
-    scroll_explore: "Scrollen zum Erkunden",
+    // Skills
+    dot_net: ".NET",
+    javascript: "JavaScript",
+    react: "React",
+    flutter: "Flutter",
+    ai_ml: "AI/ML",
+    python: "Python",
+    dart: "Dart",
+    swift: "Swift",
+    kotlin: "Kotlin",
+    cpp: "C++",
+    sql: "SQL",
+    oracle: "Oracle",
     
-    // Experience Section
-    professional_journey: "Beruflicher Werdegang",
-    experience_subtitle: "Fast zwei Jahrzehnte Führungsexzellenz in Gastgewerbe, Immobilien und Einzelhandel",
+    // Project descriptions
+    ai_customer_service_desc: "Intelligent kundserviceplattform driven av maskininlärningsalgoritmer för automatiserad responsgenerering, sentimentanalys och realtids chattsupport.",
+    giggli_autism_desc: "Utbildningsmobilapp designad för att stödja barn med autism genom interaktiva inlärningsmoduler, framstegsuppföljning och personaliserade terapiaktiviteter.",
+    cosmetics_checker_desc: "Mobilapp som hjälper användare att kontrollera kosmetiska ingredienser för säkerhet, kompatibilitet med hudtyper och potentiella allergenvarningar.",
+    food_checker_desc: "Matingrediensanalysapp som tillhandahåller detaljerad näringsinformation, allergenvarningar och dietkompatibilitetskontroller.",
+    ecommerce_platform_desc: "Omfattande e-handelslösning med lagerhantering, orderbehandling, kundanalys och integration av flera betalningsgateways.",
+    real_estate_desc: "Fastighetshanteringsplattform med hyresgästspårning, hyreshantering, underhållsschemaläggning och omfattande finansiell rapportering.",
+    ml_dashboard_desc: "Avancerad datavisualiseringsdashboard för ML-modellprediktioner med realtidsanalys, prestandamått och automatiserad rapportering.",
+    hotel_management_desc: "Komplett gästfrihetslösning med bokningssystem, gästservice, städkoordinering och intäktsoptimering.",
+    mobile_customer_desc: "Företagsmobilapplikation för kundservicerepresentanter med offline-stöd, datasynkronisering och realtidsnotiser.",
     
-    // Education Section
-    academic_excellence: "Akademische Exzellenz",
-    education_subtitle: "Kontinuierliche Lernreise vom Hotelmanagement zu modernster KI und maschinellem Lernen",
-    ongoing: "Laufend",
-    completed: "Abgeschlossen",
+    // Additional Contact
+    whatsapp_number: "+971 55 37 202 37",
+    sweden_phone: "+46 73 695 31 02",
     
-    // Skills Section
-    skills_expertise: "Fähigkeiten & Expertise",
-    skills_subtitle: "Eine einzigartige Mischung aus technischer Kompetenz und Führungsexzellenz",
-    programming_languages: "Programmiersprachen",
-    frameworks_technologies: "Frameworks & Technologien",
-    leadership_management: "Führung & Management",
-    languages: "Sprachen",
+    // Navigation tooltips
+    tooltip_home: "Gå hem",
+    tooltip_experience: "Visa erfarenhet",
+    tooltip_education: "Se utbildning",
+    tooltip_skills: "Kontrollera färdigheter",
+    tooltip_projects: "Bläddra projekt",
+    tooltip_contact: "Kontakta mig",
     
-    // Projects Section
-    featured_projects: "Ausgewählte Projekte",
-    projects_subtitle: "Innovative Lösungen von Webplattformen bis hin zu mobilen Apps im App Store und Google Play",
-    all: "Alle",
-    mobile_apps: "Mobile Apps",
-    web_apps: "Web Apps",
-    featured: "Ausgewählt",
-    visit_site: "Seite besuchen",
-    code: "Code",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "Verfügbar im App Store & Google Play",
-    no_projects_found: "Keine Projekte gefunden",
-    try_different_filter: "Versuchen Sie einen anderen Filter zu wählen, um mehr Projekte zu sehen.",
+    // Loading states
+    loading: "Laddar...",
+    loading_projects: "Laddar projekt...",
     
-    // Contact Section
-    lets_connect: "Lassen Sie uns verbinden",
-    contact_subtitle: "Bereit, innovative Lösungen für Ihr nächstes Projekt zu liefern. Lassen Sie uns besprechen, wie wir zusammenarbeiten können.",
-    email: "E-Mail",
-    phone: "Telefon",
-    location: "Standort",
-    stockholm_sweden: "Stockholm, Schweden",
-    download_full_cv: "Vollständigen Lebenslauf herunterladen",
-    send_message: "Nachricht senden",
-    your_name: "Ihr Name",
-    your_email: "Ihre E-Mail",
-    subject: "Betreff",
-    your_message: "Ihre Nachricht",
-    sending: "Senden...",
-    message_sent_success: "Nachricht erfolgreich gesendet! Ich werde mich bald melden.",
-    message_send_error: "Fehler beim Senden der Nachricht. Versuchen Sie es erneut oder kontaktieren Sie mich direkt.",
+    // Common actions
+    view: "Visa",
+    edit: "Redigera",
+    delete: "Radera",
+    save: "Spara",
+    cancel: "Avbryt",
+    close: "Stäng",
+    open: "Öppna",
     
-    // Skills Categories
-    team_leadership: "Teamführung",
-    regional_management: "Regionales Management",
-    training_development: "Schulung & Entwicklung",
-    customer_relations: "Kundenbeziehungen",
-    business_strategy: "Geschäftsstrategie",
-    arabic: "Arabisch",
-    english: "Englisch",
-    swedish: "Schwedisch",
-    french: "Französisch",
-    spanish: "Spanisch"
-  },
-  
-  pl: {
-    // Navigation - Polish
-    home: "Strona główna",
-    experience: "Doświadczenie",
-    education: "Edukacja",
-    skills: "Umiejętności",
-    projects: "Projekty",
-    contact: "Kontakt",
-    
-    // Hero Section
-    welcome: "Witaj w mojej cyfrowej przestrzeni",
-    title_role: "Zaawansowana Programistka i Menedżer Regionalny",
-    hero_description: "Łączenie doskonałości biznesowej z najnowocześniejszą technologią. Od zarządzania operacjami regionalnymi w ZEA, Katarze i Jordanii po opanowanie full-stack developmentu z AI i uczeniem maszynowym.",
-    download_cv: "Pobierz CV",
-    get_in_touch: "Skontaktuj się",
-    scroll_explore: "Przewiń, aby eksplorować",
-    
-    // Experience Section
-    professional_journey: "Podróż zawodowa",
-    experience_subtitle: "Prawie dwie dekady doskonałości przywódczej w sektorach hotelarskim, nieruchomości i handlu detalicznego",
-    
-    // Education Section
-    academic_excellence: "Doskonałość akademicka",
-    education_subtitle: "Ciągła podróż edukacyjna od zarządzania hotelarstwem do najnowocześniejszego AI i uczenia maszynowego",
-    ongoing: "W trakcie",
-    completed: "Ukończone",
-    
-    // Skills Section
-    skills_expertise: "Umiejętności i Ekspertyza",
-    skills_subtitle: "Unikalne połączenie umiejętności technicznych i doskonałości przywódczej",
-    programming_languages: "Języki programowania",
-    frameworks_technologies: "Frameworki i Technologie",
-    leadership_management: "Przywództwo i Zarządzanie",
-    languages: "Języki",
-    
-    // Projects Section
-    featured_projects: "Wybrane projekty",
-    projects_subtitle: "Prezentacja innowacyjnych rozwiązań od platform internetowych po aplikacje mobilne dostępne w App Store i Google Play",
-    all: "Wszystkie",
-    mobile_apps: "Aplikacje mobilne",
-    web_apps: "Aplikacje internetowe",
-    featured: "Wybrane",
-    visit_site: "Odwiedź stronę",
-    code: "Kod",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "Dostępne w App Store i Google Play",
-    no_projects_found: "Nie znaleziono projektów",
-    try_different_filter: "Spróbuj wybrać inny filtr, aby zobaczyć więcej projektów.",
-    
-    // Contact Section
-    lets_connect: "Nawiążmy kontakt",
-    contact_subtitle: "Gotowa do dostarczenia innowacyjnych rozwiązań dla Twojego następnego projektu. Omówmy, jak możemy współpracować.",
-    email: "E-mail",
-    phone: "Telefon",
-    location: "Lokalizacja",
-    stockholm_sweden: "Sztokholm, Szwecja",
-    download_full_cv: "Pobierz pełne CV",
-    send_message: "Wyślij wiadomość",
-    your_name: "Twoje imię",
-    your_email: "Twój e-mail",
-    subject: "Temat",
-    your_message: "Twoja wiadomość",
-    sending: "Wysyłanie...",
-    message_sent_success: "Wiadomość wysłana pomyślnie! Wkrótce odpowiem.",
-    message_send_error: "Nie udało się wysłać wiadomości. Spróbuj ponownie lub skontaktuj się ze mną bezpośrednio.",
-    
-    // Skills Categories
-    team_leadership: "Przywództwo zespołowe",
-    regional_management: "Zarządzanie regionalne",
-    training_development: "Szkolenia i Rozwój",
-    customer_relations: "Relacje z klientami",
-    business_strategy: "Strategia biznesowa",
-    arabic: "Arabski",
-    english: "Angielski",
-    swedish: "Szwedzki",
-    french: "Francuski",
-    spanish: "Hiszpański"
-  },
-  
-  it: {
-    // Navigation - Italian
-    home: "Home",
-    experience: "Esperienza",
-    education: "Educazione",
-    skills: "Competenze",
-    projects: "Progetti",
-    contact: "Contatto",
-    
-    // Hero Section
-    welcome: "Benvenuto nel mio spazio digitale",
-    title_role: "Sviluppatrice Sofisticata e Manager Regionale",
-    hero_description: "Collegando l'eccellenza aziendale con la tecnologia all'avanguardia. Dalla gestione di operazioni regionali in UAE, Qatar e Giordania alla padronanza dello sviluppo full-stack con AI e machine learning.",
-    download_cv: "Scarica CV",
-    get_in_touch: "Mettiti in contatto",
-    scroll_explore: "Scorri per esplorare",
-    
-    // Experience Section
-    professional_journey: "Percorso professionale",
-    experience_subtitle: "Quasi due decenni di eccellenza nella leadership nei settori dell'ospitalità, immobiliare e retail",
-    
-    // Education Section
-    academic_excellence: "Eccellenza accademica",
-    education_subtitle: "Viaggio di apprendimento continuo dalla gestione alberghiera all'AI e machine learning all'avanguardia",
-    ongoing: "In corso",
-    completed: "Completato",
-    
-    // Skills Section
-    skills_expertise: "Competenze ed Esperienza",
-    skills_subtitle: "Una miscela unica di abilità tecniche ed eccellenza nella leadership",
-    programming_languages: "Linguaggi di Programmazione",
-    frameworks_technologies: "Framework e Tecnologie",
-    leadership_management: "Leadership e Management",
-    languages: "Lingue",
-    
-    // Projects Section
-    featured_projects: "Progetti in evidenza",
-    projects_subtitle: "Mostrando soluzioni innovative dalle piattaforme web alle app mobili disponibili su App Store e Google Play",
-    all: "Tutti",
-    mobile_apps: "App Mobili",
-    web_apps: "App Web",
-    featured: "In evidenza",
-    visit_site: "Visita sito",
-    code: "Codice",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "Disponibile su App Store e Google Play",
-    no_projects_found: "Nessun progetto trovato",
-    try_different_filter: "Prova a selezionare un filtro diverso per vedere più progetti.",
-    
-    // Contact Section
-    lets_connect: "Connettiamoci",
-    contact_subtitle: "Pronto a portare soluzioni innovative al vostro prossimo progetto. Discutiamo di come possiamo lavorare insieme.",
-    email: "Email",
-    phone: "Telefono",
-    location: "Posizione",
-    stockholm_sweden: "Stoccolma, Svezia",
-    download_full_cv: "Scarica CV completo",
-    send_message: "Invia messaggio",
-    your_name: "Il tuo nome",
-    your_email: "La tua email",
-    subject: "Oggetto",
-    your_message: "Il tuo messaggio",
-    sending: "Invio...",
-    message_sent_success: "Messaggio inviato con successo! Ti risponderò presto.",
-    message_send_error: "Invio del messaggio fallito. Riprova o contattami direttamente.",
-    
-    // Skills Categories
-    team_leadership: "Leadership di squadra",
-    regional_management: "Gestione regionale",
-    training_development: "Formazione e Sviluppo",
-    customer_relations: "Relazioni clienti",
-    business_strategy: "Strategia aziendale",
-    arabic: "Arabo",
-    english: "Inglese",
-    swedish: "Svedese",
-    french: "Francese",
-    spanish: "Spagnolo"
-  },
-  
-  fr: {
-    // Navigation - French
-    home: "Accueil",
-    experience: "Expérience",
-    education: "Éducation",
-    skills: "Compétences",
-    projects: "Projets",
-    contact: "Contact",
-    
-    // Hero Section
-    welcome: "Bienvenue dans mon espace numérique",
-    title_role: "Développeuse Sophistiquée et Directrice Régionale",
-    hero_description: "Allier l'excellence commerciale à la technologie de pointe. De la gestion d'opérations régionales aux Émirats, au Qatar et en Jordanie à la maîtrise du développement full-stack avec l'IA et l'apprentissage automatique.",
-    download_cv: "Télécharger CV",
-    get_in_touch: "Prendre contact",
-    scroll_explore: "Faire défiler pour explorer",
-    
-    // Experience Section
-    professional_journey: "Parcours professionnel",
-    experience_subtitle: "Près de deux décennies d'excellence en leadership dans les secteurs de l'hôtellerie, de l'immobilier et du retail",
-    
-    // Education Section
-    academic_excellence: "Excellence académique",
-    education_subtitle: "Parcours d'apprentissage continu de la gestion hôtelière à l'IA et l'apprentissage automatique de pointe",
-    ongoing: "En cours",
-    completed: "Terminé",
-    
-    // Skills Section
-    skills_expertise: "Compétences et Expertise",
-    skills_subtitle: "Un mélange unique de prouesse technique et d'excellence en leadership",
-    programming_languages: "Langages de Programmation",
-    frameworks_technologies: "Frameworks et Technologies",
-    leadership_management: "Leadership et Management",
-    languages: "Langues",
-    
-    // Projects Section
-    featured_projects: "Projets en vedette",
-    projects_subtitle: "Présentation de solutions innovantes des plateformes web aux applications mobiles disponibles sur App Store et Google Play",
-    all: "Tous",
-    mobile_apps: "Apps Mobiles",
-    web_apps: "Apps Web",
-    featured: "En vedette",
-    visit_site: "Visiter le site",
-    code: "Code",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "Disponible sur App Store et Google Play",
-    no_projects_found: "Aucun projet trouvé",
-    try_different_filter: "Essayez de sélectionner un filtre différent pour voir plus de projets.",
-    
-    // Contact Section
-    lets_connect: "Connectons-nous",
-    contact_subtitle: "Prêt à apporter des solutions innovantes à votre prochain projet. Discutons de la façon dont nous pouvons travailler ensemble.",
-    email: "Email",
-    phone: "Téléphone",
-    location: "Localisation",
-    stockholm_sweden: "Stockholm, Suède",
-    download_full_cv: "Télécharger CV complet",
-    send_message: "Envoyer un message",
-    your_name: "Votre nom",
-    your_email: "Votre email",
-    subject: "Sujet",
-    your_message: "Votre message",
-    sending: "Envoi...",
-    message_sent_success: "Message envoyé avec succès! Je vous répondrai bientôt.",
-    message_send_error: "Échec de l'envoi du message. Réessayez ou contactez-moi directement.",
-    
-    // Skills Categories
-    team_leadership: "Leadership d'équipe",
-    regional_management: "Gestion régionale",
-    training_development: "Formation et Développement",
-    customer_relations: "Relations clientèle",
-    business_strategy: "Stratégie d'entreprise",
-    arabic: "Arabe",
-    english: "Anglais",
-    swedish: "Suédois",
-    french: "Français",
-    spanish: "Espagnol"
-  },
-  
-  zh: {
-    // Navigation - Chinese (Mandarin)
-    home: "首页",
-    experience: "经验",
-    education: "教育",
-    skills: "技能",
-    projects: "项目",
-    contact: "联系",
-    
-    // Hero Section
-    welcome: "欢迎来到我的数字空间",
-    title_role: "资深开发者兼区域经理",
-    hero_description: "将商业卓越与前沿技术相结合。从管理阿联酋、卡塔尔和约旦的区域运营，到掌握AI和机器学习的全栈开发。",
-    download_cv: "下载简历",
-    get_in_touch: "联系我",
-    scroll_explore: "滚动探索",
-    
-    // Experience Section
-    professional_journey: "职业历程",
-    experience_subtitle: "在酒店、房地产和零售行业近二十年的卓越领导经验",
-    
-    // Education Section
-    academic_excellence: "学术卓越",
-    education_subtitle: "从酒店管理到前沿AI和机器学习的持续学习之旅",
-    ongoing: "进行中",
-    completed: "已完成",
-    
-    // Skills Section
-    skills_expertise: "技能与专长",
-    skills_subtitle: "技术实力与领导卓越的独特结合",
-    programming_languages: "编程语言",
-    frameworks_technologies: "框架和技术",
-    leadership_management: "领导力和管理",
-    languages: "语言",
-    
-    // Projects Section
-    featured_projects: "精选项目",
-    projects_subtitle: "展示从网络平台到在App Store和Google Play上可用的移动应用程序的创新解决方案",
-    all: "全部",
-    mobile_apps: "移动应用",
-    web_apps: "网络应用",
-    featured: "精选",
-    visit_site: "访问网站",
-    code: "代码",
-    app_store: "App Store",
-    play_store: "Google Play",
-    available_stores: "在App Store和Google Play上可用",
-    no_projects_found: "未找到项目",
-    try_different_filter: "尝试选择不同的过滤器以查看更多项目。",
-    
-    // Contact Section
-    lets_connect: "让我们联系",
-    contact_subtitle: "准备为您的下一个项目带来创新解决方案。让我们讨论如何合作。",
-    email: "邮箱",
-    phone: "电话",
-    location: "位置",
-    stockholm_sweden: "瑞典斯德哥尔摩",
-    download_full_cv: "下载完整简历",
-    send_message: "发送消息",
-    your_name: "您的姓名",
-    your_email: "您的邮箱",
-    subject: "主题",
-    your_message: "您的消息",
-    sending: "发送中...",
-    message_sent_success: "消息发送成功！我很快会回复您。",
-    message_send_error: "消息发送失败。请重试或直接联系我。",
-    
-    // Skills Categories
-    team_leadership: "团队领导",
-    regional_management: "区域管理",
-    training_development: "培训和发展",
-    customer_relations: "客户关系",
-    business_strategy: "商业策略",
-    arabic: "阿拉伯语",
-    english: "英语",
-    swedish: "瑞典语",
-    french: "法语",
-    spanish: "西班牙语"
+    // Status indicators
+    active: "Aktiv",
+    inactive: "Inaktiv",
+    pending: "Väntande",
+    activated: "Aktiverad"
   }
 };
 
 let currentLanguage = 'en';
+let currentTheme = 'dark';
 
 if (typeof window !== 'undefined') {
     currentLanguage = localStorage.getItem('portfolioLanguage') || 'en';
+    currentTheme = localStorage.getItem('portfolioTheme') || 'dark';
     document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.lang = currentLanguage;
+    document.documentElement.setAttribute('data-theme', currentTheme);
 }
-
 
 export function setLanguage(lang) {
   if (translations[lang]) {
@@ -791,6 +722,28 @@ export function getCurrentLanguage() {
   return currentLanguage;
 }
 
+export function getCurrentTheme() {
+  return currentTheme;
+}
+
+export function setTheme(theme) {
+  if (['light', 'dark'].includes(theme)) {
+    currentTheme = theme;
+    localStorage.setItem('portfolioTheme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Update body class for theme
+    document.body.className = document.body.className.replace(/theme-\w+/g, '');
+    document.body.classList.add(`theme-${theme}`);
+  }
+}
+ 
+export function toggleTheme() {
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+  return newTheme;
+}
+
 export function t(key) {
   return translations[currentLanguage]?.[key] || translations['en'][key] || key;
 }
@@ -799,12 +752,6 @@ export function getAvailableLanguages() {
   return [
     { code: 'en', name: 'English', flag: '🇺🇸' },
     { code: 'ar', name: 'العربية', flag: '🇸🇦' },
-    { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-    { code: 'pl', name: 'Polski', flag: '🇵🇱' },
-    { code: 'it', name: 'Italiano', flag: '🇮🇹' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'zh', name: '中文', flag: '🇨🇳' }
+    { code: 'sv', name: 'Svenska', flag: '🇸🇪' }
   ];
 }
