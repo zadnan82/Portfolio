@@ -142,8 +142,8 @@ export default function ContactSection() {
     textSecondary: theme === 'dark' ? 'text-gray-300' : 'text-gray-600',
     textAccent: theme === 'dark' ? 'text-cyan-400' : 'text-cyan-600',
     glass: theme === 'dark' 
-      ? 'bg-white/10 backdrop-blur-lg border-white/10' 
-      : 'bg-white/80 backdrop-blur-lg border-white/50 shadow-lg',
+      ? 'bg-white/10 backdrop-blur-md border border-white/10' 
+      : 'bg-white/80 backdrop-blur-md border border-white/50 shadow-lg',
     hover: theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-gray-100/80',
     input: theme === 'dark' 
       ? 'bg-white/10 border-cyan-400/50 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20' 
@@ -159,54 +159,54 @@ export default function ContactSection() {
   const themeClasses = getThemeClasses();
 
   return (
-    <section id="contact" className="py-20 px-6 bg-gradient-to-t from-indigo-900/30 to-transparent">
-      <div className="container mx-auto max-w-6xl">
+    <section id="contact" className="py-8 px-4 bg-gradient-to-t from-indigo-900/30 to-transparent">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <MessageCircle className={`w-8 h-8 ${themeClasses.textAccent}`} />
-            <h2 className={`text-5xl font-bold ${themeClasses.text}`}>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <MessageCircle className={`w-5 h-5 ${themeClasses.textAccent}`} />
+            <h2 className={`text-2xl font-bold ${themeClasses.text}`}>
               {t('lets_connect').split(' ')[0]} <span className="gradient-text">{t('lets_connect').split(' ')[1]}</span>
             </h2>
           </div>
-          <p className={`text-xl ${themeClasses.textSecondary} max-w-3xl mx-auto`}>
+          <p className={`text-sm ${themeClasses.textSecondary} max-w-xl mx-auto`}>
             {t('contact_subtitle')}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           
           {/* Contact Information */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className={`glass-effect rounded-2xl p-8 shadow-2xl ${themeClasses.glass}`}>
-              <h3 className={`text-2xl font-bold ${themeClasses.text} mb-6 flex items-center gap-2`}>
+            <div className={`glass-effect rounded-2xl p-4 shadow-2xl ${themeClasses.glass}`}>
+              <h3 className={`text-lg font-bold ${themeClasses.text} mb-4 flex items-center gap-2`}>
                 <span className={themeClasses.textAccent}>💬</span> {t('get_in_touch')}
               </h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4">
                 <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className={`flex items-center gap-4 p-4 ${
+                  whileHover={{ scale: 1.01 }}
+                  className={`flex items-center gap-3 p-3 ${
                     theme === 'dark' ? 'bg-white/5' : 'bg-gray-50'
-                  } rounded-xl ${themeClasses.hover} transition-all duration-300`}
+                  } rounded-lg ${themeClasses.hover} transition-all duration-300`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg vibrant-glow">
-                    <Mail className="w-6 h-6 text-white" />
+                  <div                   className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-2xl vibrant-glow">
+                    <Mail className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className={`${themeClasses.textAccent} text-sm font-medium`}>{t('email')}</p>
-                    <p className={`${themeClasses.text} font-medium`}>zadnaniths@gmail.com</p>
+                    <p className={`${themeClasses.textAccent} text-xs font-medium`}>{t('email')}</p>
+                    <p className={`${themeClasses.text} font-medium text-sm`}>zadnaniths@gmail.com</p>
                     <a 
                       href="mailto:zadnaniths@gmail.com" 
                       className={`text-xs ${themeClasses.textAccent} hover:text-cyan-200 transition-colors`}
@@ -219,102 +219,95 @@ export default function ContactSection() {
                 </motion.div>
 
                 <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className={`flex items-center gap-4 p-4 ${
+                  whileHover={{ scale: 1.01 }}
+                  className={`flex items-center gap-3 p-3 ${
                     theme === 'dark' ? 'bg-white/5' : 'bg-gray-50'
-                  } rounded-xl ${themeClasses.hover} transition-all duration-300`}
+                  } rounded-lg ${themeClasses.hover} transition-all duration-300`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg vibrant-glow">
-                    <Phone className="w-6 h-6 text-white" />
+                  <div                   className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-green-500 rounded-2xl flex items-center justify-center shadow-2xl vibrant-glow">
+                    <Phone className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className={`text-emerald-400 text-sm font-medium`}>{t('phone_sweden')}</p>
-                    <p className={`${themeClasses.text} font-medium`}>{t('sweden_phone')}</p>
+                    <p className={`text-emerald-400 text-xs font-medium`}>{t('phone_sweden')}</p>
+                    <p className={`${themeClasses.text} font-medium text-sm`}>{t('sweden_phone')}</p>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className={`flex items-center gap-4 p-4 ${
+                  whileHover={{ scale: 1.01 }}
+                  className={`flex items-center gap-3 p-3 ${
                     theme === 'dark' ? 'bg-white/5' : 'bg-gray-50'
-                  } rounded-xl ${themeClasses.hover} transition-all duration-300`}
+                  } rounded-lg ${themeClasses.hover} transition-all duration-300`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg vibrant-glow">
-                    <MessageCircle className="w-6 h-6 text-white" />
+                  <div                   className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl vibrant-glow">
+                    <MessageCircle className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className={`text-green-400 text-sm font-medium`}>{t('whatsapp')}</p>
-                    <p className={`${themeClasses.text} font-medium`}>{t('whatsapp_number')}</p>
+                    <p className={`text-green-400 text-xs font-medium`}>{t('whatsapp')}</p>
+                    <p className={`${themeClasses.text} font-medium text-sm`}>{t('whatsapp_number')}</p>
                   </div>
                 </motion.div>
 
                 <motion.div 
-                  whileHover={{ scale: 1.02 }}
-                  className={`flex items-center gap-4 p-4 ${
+                  whileHover={{ scale: 1.01 }}
+                  className={`flex items-center gap-3 p-3 ${
                     theme === 'dark' ? 'bg-white/5' : 'bg-gray-50'
-                  } rounded-xl ${themeClasses.hover} transition-all duration-300`}
+                  } rounded-lg ${themeClasses.hover} transition-all duration-300`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg vibrant-glow">
-                    <MapPin className="w-6 h-6 text-white" />
+                  <div                   className="w-8 h-8 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl vibrant-glow">
+                    <MapPin className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className={`text-orange-400 text-sm font-medium`}>{t('location')}</p>
-                    <p className={`${themeClasses.text} font-medium`}>{t('stockholm_sweden')}</p>
+                    <p className={`text-orange-400 text-xs font-medium`}>{t('location')}</p>
+                    <p className={`${themeClasses.text} font-medium text-sm`}>{t('stockholm_sweden')}</p>
                   </div>
                 </motion.div>
               </div>
             </div>
 
             {/* Quick Actions */}
-            <div className="space-y-4">
-              {/* <Button className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 p-6 text-lg font-medium shadow-2xl vibrant-glow transition-all duration-300">
-                <Download className="w-5 h-5 mr-3" />
-                {t('download_full_cv')}
-              </Button> */}
-              
-             <div className="grid grid-cols-2 gap-4">
-                <Button 
-                  variant="outline" 
+            <div className="space-y-3">
+             <div className="grid grid-cols-2 gap-3">
+                <button 
                   className={`${
                     theme === 'dark' 
-                      ? 'border-purple-400 text-purple-400 hover:bg-purple-500 hover:text-white' 
-                      : 'border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white'
-                  } p-4 transition-all duration-300`}
+                      ? 'border border-purple-400 text-purple-400 hover:bg-purple-500 hover:text-white' 
+                      : 'border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white'
+                  } p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm`}
                   onClick={() => window.open('https://github.com/zadnan82', '_blank')}
                 >
-                  <Github className="w-5 h-5 mr-2" />
+                  <Github className="w-4 h-4" />
                   {t('github')}
-                </Button>
-                <Button 
-                  variant="outline" 
+                </button>
+                <button 
                   className={`${
                     theme === 'dark' 
-                      ? 'border-cyan-300 text-white hover:bg-cyan-400 hover:text-gray-900 hover:border-cyan-400' 
-                      : 'border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black hover:border-blue-500'
-                  } p-4 transition-all duration-300`}
+                      ? 'border border-cyan-300 text-white hover:bg-cyan-400 hover:text-gray-900 hover:border-cyan-400' 
+                      : 'border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-black hover:border-blue-500'
+                  } p-3 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm`}
                   onClick={() => window.open('https://www.linkedin.com/in/z-adnan/', '_blank')}
                 >
-                  <Linkedin className="w-5 h-5 mr-2" />
+                  <Linkedin className="w-4 h-4" />
                   {t('linkedin')}
-                </Button>
+                </button>
               </div>
             </div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className={`glass-effect rounded-2xl p-8 shadow-2xl ${themeClasses.glass}`}>
-              <h3 className={`text-2xl font-bold ${themeClasses.text} mb-6 flex items-center gap-2`}>
+            <div className={`glass-effect rounded-2xl p-4 shadow-2xl ${themeClasses.glass}`}>
+              <h3 className={`text-lg font-bold ${themeClasses.text} mb-4 flex items-center gap-2`}>
                 <span className="text-pink-400">📧</span> {t('send_message')}
               </h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-3">
                   <div>
                     <Input
                       type="text"
@@ -323,7 +316,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className={`${themeClasses.input} transition-colors`}
+                      className={`${themeClasses.input} transition-colors text-sm h-8`}
                     />
                   </div>
                   <div>
@@ -334,7 +327,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className={`${themeClasses.input} transition-colors`}
+                      className={`${themeClasses.input} transition-colors text-sm h-8`}
                     />
                   </div>
                 </div>
@@ -346,7 +339,7 @@ export default function ContactSection() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className={`${themeClasses.input} transition-colors`}
+                  className={`${themeClasses.input} transition-colors text-sm h-8`}
                 />
 
                 <Textarea
@@ -355,41 +348,41 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className={`${themeClasses.input} transition-colors resize-none`}
+                  rows={4}
+                  className={`${themeClasses.input} transition-colors resize-none text-sm`}
                 />
 
-                <Button
+                <button
                   type="submit"
                   disabled={isSubmitting || !emailjsLoaded}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 p-4 text-lg font-medium shadow-2xl vibrant-glow transition-all duration-300 disabled:opacity-50"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 p-3 text-sm font-medium shadow-2xl rounded-2xl transition-all duration-300 disabled:opacity-50 text-white flex items-center justify-center gap-2 vibrant-glow hover:scale-105"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                       {t('sending')}
                     </>
                   ) : !emailjsLoaded ? (
                     <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                       Loading...
                     </>
                   ) : (
                     <>
-                      <Send className="w-5 h-5 mr-3" />
+                      <Send className="w-4 h-4" />
                       {t('send_message')}
                     </>
                   )}
-                </Button>
+                </button>
 
                 {submitStatus === 'success' && (
-                  <div className={`${themeClasses.successBg} border ${themeClasses.successBorder} ${themeClasses.successText} p-4 rounded-lg text-center`}>
+                  <div className={`${themeClasses.successBg} border ${themeClasses.successBorder} ${themeClasses.successText} p-3 rounded-lg text-center text-sm`}>
                     ✨ {t('message_sent_success')} ✨
                   </div>
                 )}
 
                 {(submitStatus === 'error' || error) && (
-                  <div className={`${themeClasses.errorBg} border ${themeClasses.errorBorder} ${themeClasses.errorText} p-4 rounded-lg text-center`}>
+                  <div className={`${themeClasses.errorBg} border ${themeClasses.errorBorder} ${themeClasses.errorText} p-3 rounded-lg text-center text-sm`}>
                     ❗ {error || t('message_send_error')}
                   </div>
                 )}

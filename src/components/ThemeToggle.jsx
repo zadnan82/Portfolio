@@ -40,13 +40,13 @@ export default function ThemeToggle() {
   // Don't render until mounted
   if (!mounted) {
     return (
-      <div className="w-14 h-7 bg-gray-300 rounded-full animate-pulse"></div>
+      <div className="w-12 h-6 bg-gray-300 rounded-full animate-pulse"></div>
     );
   }
 
   return (
     <div className="relative group">
-      {/* Outer frame with glassmorphism */}
+      {/* Outer frame with glassmorphism matching theme toggle - SMALLER */}
       <div 
         className="rounded-2xl p-1 transition-all duration-500"
         style={{
@@ -62,7 +62,7 @@ export default function ThemeToggle() {
       >
         <button
           onClick={handleToggle}
-          className="w-20 h-10 rounded-xl relative transition-all duration-500 focus:outline-none flex items-center focus:ring-4 focus:ring-cyan-400/30 hover:scale-[1.02] transform"
+          className="w-14 h-7 rounded-xl relative transition-all duration-500 focus:outline-none flex items-center focus:ring-4 focus:ring-cyan-400/30 hover:scale-[1.02] transform"
           style={{
             background: theme === 'dark' 
               ? 'linear-gradient(135deg, #0f0f23, #1e1b4b, #312e81)' 
@@ -72,7 +72,7 @@ export default function ThemeToggle() {
               : 'inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3)'
           }}
         >
-          {/* Background stars/sparkles for dark mode */}
+          {/* Background stars/sparkles for dark mode - SMALLER */}
           {theme === 'dark' && (
             <div className="absolute inset-0 overflow-hidden rounded-xl">
               {[...Array(8)].map((_, i) => (
@@ -90,12 +90,12 @@ export default function ThemeToggle() {
             </div>
           )}
 
-          {/* Moving slider with enhanced padding */}
+          {/* Moving slider with enhanced padding - SMALLER */}
           <div
-            className="absolute w-8 h-8 rounded-lg shadow-2xl transition-all duration-500 flex items-center justify-center backdrop-blur-sm border"
+            className="absolute w-6 h-6 rounded-lg shadow-2xl transition-all duration-500 flex items-center justify-center backdrop-blur-sm border"
             style={{
-              left: theme === 'dark' ? '4px' : 'calc(100% - 36px)',
-              top: '4px',
+              left: theme === 'dark' ? '2px' : 'calc(100% - 26px)',
+              top: '2px',
               background: 'rgba(255, 255, 255, 0.95)',
               borderColor: theme === 'dark' ? 'rgba(147, 197, 253, 0.4)' : 'rgba(251, 191, 36, 0.4)',
               boxShadow: theme === 'dark'
@@ -104,12 +104,12 @@ export default function ThemeToggle() {
               transform: 'translateZ(0)' // Hardware acceleration
             }}
           >
-            {/* Icon with enhanced padding and glow */}
+            {/* Icon with enhanced padding and glow - SMALLER */}
             <div className="relative p-1">
               {theme === 'dark' ? (
                 <div className="relative">
                   <Moon 
-                    className="w-5 h-5 transition-all duration-300" 
+                    className="w-4 h-4 transition-all duration-300" 
                     style={{ 
                       color: '#3b82f6',
                       filter: 'drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))'
@@ -127,7 +127,7 @@ export default function ThemeToggle() {
               ) : (
                 <div className="relative">
                   <Sun 
-                    className="w-5 h-5 transition-all duration-300 animate-spin"
+                    className="w-4 h-4 transition-all duration-300 animate-spin"
                     style={{ 
                       color: '#f59e0b',
                       filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.8))',
@@ -142,7 +142,7 @@ export default function ThemeToggle() {
                       transform: 'scale(1.5)'
                     }}
                   />
-                  {/* Sun rays */}
+                  {/* Sun rays - SMALLER */}
                   {[...Array(8)].map((_, i) => (
                     <div
                       key={i}
@@ -150,8 +150,8 @@ export default function ThemeToggle() {
                       style={{
                         left: '50%',
                         top: '50%',
-                        transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-12px)`,
-                        transformOrigin: 'center 12px',
+                        transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-8px)`,
+                        transformOrigin: 'center 8px',
                         animationDelay: `${i * 0.1}s`
                       }}
                     />
@@ -174,17 +174,17 @@ export default function ThemeToggle() {
         </button>
       </div>
       
-      {/* Enhanced tooltip with better positioning */}
-      <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
+      {/* Enhanced tooltip with better positioning - SMALLER */}
+      <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-50">
         <div 
-          className="px-4 py-3 rounded-xl text-sm font-medium backdrop-blur-xl border shadow-2xl"
+          className="px-3 py-2 rounded-xl text-sm font-medium backdrop-blur-xl border shadow-2xl"
           style={{
             background: 'rgba(0, 0, 0, 0.85)',
             borderColor: 'rgba(255, 255, 255, 0.15)',
             color: '#ffffff'
           }}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {theme === 'dark' ? (
               <>
                 <Sun className="w-4 h-4 text-yellow-400" />

@@ -69,9 +69,9 @@ export default function SkillsVisualization() {
     textSecondary: theme === 'dark' ? 'text-gray-300' : 'text-gray-600',
     textAccent: theme === 'dark' ? 'text-orange-400' : 'text-orange-600',
     glass: theme === 'dark' 
-      ? 'bg-white/10 backdrop-blur-lg border-white/10' 
-      : 'bg-white/80 backdrop-blur-lg border-white/50 shadow-lg',
-    hover: theme === 'dark' ? 'hover:shadow-cyan-500/20' : 'hover:shadow-cyan-500/30',
+      ? 'bg-white/10 backdrop-blur-md border border-white/10' 
+      : 'bg-white/80 backdrop-blur-md border border-white/50 shadow-lg',
+    hover: theme === 'dark' ? 'hover:shadow-lg hover:shadow-cyan-500/20' : 'hover:shadow-lg hover:shadow-cyan-500/30',
     skillBg: theme === 'dark' ? 'bg-gray-800/50' : 'bg-gray-200/80',
     skillPercent: theme === 'dark' ? 'bg-white/10' : 'bg-white/80'
   });
@@ -79,67 +79,67 @@ export default function SkillsVisualization() {
   const themeClasses = getThemeClasses();
 
   return (
-    <section id="skills" className="py-20 px-6 bg-gradient-to-b from-transparent via-cyan-900/20 to-transparent">
-      <div className="container mx-auto max-w-7xl">
+    <section id="skills" className="py-8 px-4 bg-gradient-to-b from-transparent via-cyan-900/20 to-transparent">
+      <div className="container mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Zap className={`w-8 h-8 ${themeClasses.textAccent}`} />
-            <h2 className={`text-5xl font-bold ${themeClasses.text}`}>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Zap className={`w-5 h-5 ${themeClasses.textAccent}`} />
+            <h2 className={`text-2xl font-bold ${themeClasses.text}`}>
               {t('skills_expertise').split(' ')[0]} & <span className="gradient-text">{t('skills_expertise').split(' ')[2]}</span>
             </h2>
           </div>
-          <p className={`text-xl ${themeClasses.textSecondary} max-w-3xl mx-auto`}>
+          <p className={`text-sm ${themeClasses.textSecondary} max-w-xl mx-auto`}>
             {t('skills_subtitle')}
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-6">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
-              className={`glass-effect rounded-2xl p-8 shadow-2xl ${themeClasses.hover} transition-all duration-300 ${themeClasses.glass}`}
+              className={`glass-effect rounded-2xl p-4 shadow-2xl ${themeClasses.hover} transition-all duration-300 ${themeClasses.glass}`}
             >
-              <h3 className={`text-2xl font-bold ${themeClasses.text} mb-8 flex items-center gap-3`}>
-                <div className="w-3 h-8 bg-gradient-to-b from-cyan-500 to-purple-500 rounded-full"></div>
+              <h3 className={`text-lg font-bold ${themeClasses.text} mb-4 flex items-center gap-2`}>
+                <div className="w-1 h-4 bg-gradient-to-b from-cyan-500 to-purple-500 rounded-full"></div>
                 {t(category.category)}
-                <Code2 className={`w-6 h-6 ${themeClasses.textAccent} ml-auto`} />
+                <Code2 className={`w-4 h-4 ${themeClasses.textAccent} ml-auto`} />
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="group">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className={`${themeClasses.text} font-medium`}>
+                    <div className="flex justify-between items-center mb-1">
+                      <span className={`${themeClasses.text} font-medium text-sm`}>
                         {skill.name === 'C#' ? 'C#' : t(skill.name)}
                       </span>
-                      <span className={`text-cyan-400 text-sm font-semibold ${themeClasses.skillPercent} px-2 py-1 rounded-full`}>
+                      <span className={`text-cyan-400 text-xs font-semibold ${themeClasses.skillPercent} px-2 py-0.5 rounded-full`}>
                         {skill.level}%
                       </span>
                     </div>
                     
-                    <div className={`relative h-4 ${themeClasses.skillBg} rounded-full overflow-hidden ${
-                      theme === 'dark' ? 'border border-white/10' : 'border border-gray-300'
+                    <div className={`relative h-2 ${themeClasses.skillBg} rounded-full overflow-hidden border ${
+                      theme === 'dark' ? 'border-white/10' : 'border-gray-300'
                     }`}>
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ 
-                          duration: 1.5, 
-                          delay: (categoryIndex * 0.2) + (skillIndex * 0.1),
+                          duration: 1.2, 
+                          delay: (categoryIndex * 0.1) + (skillIndex * 0.05),
                           ease: "easeOut"
                         }}
                         viewport={{ once: true }}
-                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative overflow-hidden shadow-lg`}
+                        className={`h-full bg-gradient-to-r ${skill.color} rounded-full relative overflow-hidden shadow-sm`}
                       >
                         <motion.div
                           animate={{ x: ["0%", "100%", "0%"] }}
