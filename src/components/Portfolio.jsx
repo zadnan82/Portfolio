@@ -46,6 +46,7 @@ export default function Portfolio() {
        <SkillsVisualization />
       <ExperienceTimeline />
       <EducationSection />
+      
       <ContactSection />
     </div>
   );

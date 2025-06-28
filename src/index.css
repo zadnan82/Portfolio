@@ -46,3 +46,11 @@ body {
   transform: translateY(-50%);
   z-index: 9999;
 }
+
+/* Fix for project descriptions being cut off */
+.line-clamp-2 {
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: none !important;
+  -webkit-box-orient: unset !important;
+}

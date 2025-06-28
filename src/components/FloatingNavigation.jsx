@@ -46,10 +46,9 @@ export default function FloatingNavigation({ onLanguageChange }) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navigationItems.map(item => item.id);
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Use middle of viewport for better detection
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      // Find the section that's currently most visible
-      let currentSection = 'hero'; // default
+      let currentSection = 'hero';
       
       for (let i = 0; i < sections.length; i++) {
         const element = document.getElementById(sections[i]);
@@ -58,7 +57,6 @@ export default function FloatingNavigation({ onLanguageChange }) {
           const elementTop = rect.top + window.scrollY;
           const elementBottom = elementTop + rect.height;
           
-          // Check if the middle of the viewport intersects with this section
           if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
             currentSection = sections[i];
             break;
@@ -69,7 +67,6 @@ export default function FloatingNavigation({ onLanguageChange }) {
       setActiveSection(currentSection);
     };
 
-    // Add debouncing to improve performance
     let timeoutId;
     const debouncedHandleScroll = () => {
       clearTimeout(timeoutId);
@@ -77,7 +74,7 @@ export default function FloatingNavigation({ onLanguageChange }) {
     };
 
     window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
-    handleScroll(); // Call once on mount
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', debouncedHandleScroll);
@@ -95,49 +92,46 @@ export default function FloatingNavigation({ onLanguageChange }) {
 
   const getThemeClasses = () => ({
     glass: theme === 'dark' 
-      ? 'bg-black/20 backdrop-blur-lg border-white/20' 
-      : 'bg-white/60 backdrop-blur-lg border-gray-200/50 shadow-lg',
+      ? 'bg-black/20 backdrop-blur-md border-white/20' 
+      : 'bg-white/60 backdrop-blur-md border-gray-200/50 shadow-lg',
     text: theme === 'dark' ? 'text-white' : 'text-gray-800',
     textMuted: theme === 'dark' ? 'text-gray-300' : 'text-gray-600',
     hover: theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-gray-100/80'
   });
 
   const getTooltipPosition = () => {
-    // In RTL (Arabic), tooltips should appear on the left side
-    return language === 'ar' ? 'left-16' : 'right-16';
+    return language === 'ar' ? 'left-12' : 'right-12';
   };
 
   const themeClasses = getThemeClasses();
 
   return (
     <>
-      {/* Language Selector and Theme Toggle - Separate positioning for RTL fix */}
+      {/* Language Selector and Theme Toggle - Smaller sizes */}
       {language === 'ar' ? (
-        // Arabic RTL Layout
-        <div className="fixed top-6 left-6 z-50 flex items-center gap-4">
+        <div className="fixed top-4 left-4 z-50 flex items-center gap-2">
           <LanguageSelector onLanguageChange={onLanguageChange} />
           <ThemeToggle />
         </div>
       ) : (
-        // LTR Layout  
-        <div className="fixed top-6 right-6 z-50 flex items-center gap-4">
+        <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
           <ThemeToggle />
           <LanguageSelector onLanguageChange={onLanguageChange} />
         </div>
       )}
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Menu Button - Smaller */}
       <motion.div 
-        className={`fixed bottom-6 z-50 md:hidden ${
-          language === 'ar' ? 'left-6' : 'right-6'
+        className={`fixed bottom-4 z-50 md:hidden ${
+          language === 'ar' ? 'left-4' : 'right-4'
         }`}
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 2 }}
+        transition={{ delay: 1.5 }}
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 shadow-2xl vibrant-glow text-white border-0"
+          className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 shadow-xl vibrant-glow text-white border-0"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (
@@ -148,7 +142,7 @@ export default function FloatingNavigation({ onLanguageChange }) {
                 exit={{ rotate: 90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <X className="w-6 h-6" />
+                <X className="w-4 h-4" />
               </motion.div>
             ) : (
               <motion.div
@@ -158,44 +152,44 @@ export default function FloatingNavigation({ onLanguageChange }) {
                 exit={{ rotate: -90, opacity: 0 }}
                 transition={{ duration: 0.2 }}
               >
-                <Menu className="w-6 h-6" />
+                <Menu className="w-4 h-4" />
               </motion.div>
             )}
           </AnimatePresence>
         </Button>
       </motion.div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation - Smaller */}
       <motion.div 
         className={`fixed top-1/2 transform -translate-y-1/2 z-50 hidden md:block ${
-          language === 'ar' ? 'left-4' : 'right-4'
+          language === 'ar' ? 'left-3' : 'right-3'
         }`}
-        initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
+        initial={{ opacity: 0, x: language === 'ar' ? -30 : 30 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2 }}
+        transition={{ delay: 1.5 }}
       >
-        <div className={`glass-effect rounded-2xl p-4 shadow-2xl ${themeClasses.glass}`}>
-          <div className="space-y-3">
+        <div className={`glass-effect rounded-2xl p-2 shadow-2xl ${themeClasses.glass}`}>
+          <div className="space-y-2">
             {navigationItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`group relative w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                className={`group relative w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${
                   activeSection === item.id 
-                    ? `bg-gradient-to-r ${item.color} shadow-lg` 
+                    ? `bg-gradient-to-r ${item.color} shadow-md` 
                     : themeClasses.hover
                 }`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <item.icon className={`w-5 h-5 ${
+                <item.icon className={`w-3.5 h-3.5 ${
                   activeSection === item.id ? 'text-white' : themeClasses.textMuted
                 }`} />
                 
-                {/* Tooltip */}
+                {/* Tooltip - Smaller */}
                 <div className={`absolute ${getTooltipPosition()} ${
                   theme === 'dark' ? 'bg-black/80' : 'bg-gray-900/90'
-                } text-white px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap`}>
+                } text-white px-2 py-1 rounded-md text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap`}>
                   {t(item.label)}
                 </div>
               </motion.button>
@@ -204,7 +198,7 @@ export default function FloatingNavigation({ onLanguageChange }) {
         </div>
       </motion.div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - Smaller */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -222,24 +216,24 @@ export default function FloatingNavigation({ onLanguageChange }) {
               exit={{ scale: 0, opacity: 0 }}
               transition={{ type: "spring", duration: 0.3 }}
               className={`absolute ${
-                language === 'ar' ? 'bottom-24 left-6' : 'bottom-24 right-6'
-              } glass-effect rounded-2xl p-6 shadow-2xl ${themeClasses.glass} w-80 max-w-[90vw]`}
+                language === 'ar' ? 'bottom-16 left-4' : 'bottom-16 right-4'
+              } glass-effect rounded-2xl p-4 shadow-2xl ${themeClasses.glass} w-64 max-w-[90vw]`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {navigationItems.map((item) => (
                   <motion.button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`flex flex-col items-center gap-2 p-4 rounded-xl transition-all duration-300 ${
+                    className={`flex flex-col items-center gap-1.5 p-3 rounded-lg transition-all duration-300 ${
                       activeSection === item.id 
                         ? `bg-gradient-to-r ${item.color} text-white` 
                         : `${themeClasses.textMuted} ${themeClasses.hover}`
                     }`}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
-                    <item.icon className="w-5 h-5" />
+                    <item.icon className="w-4 h-4" />
                     <span className="text-xs font-medium">{t(item.label)}</span>
                   </motion.button>
                 ))}

@@ -106,9 +106,9 @@ export default function ProjectsGallery() {
     textSecondary: theme === 'dark' ? 'text-gray-300' : 'text-gray-600',
     textAccent: theme === 'dark' ? 'text-pink-400' : 'text-pink-600',
     glass: theme === 'dark' 
-      ? 'bg-white/10 backdrop-blur-lg border-white/10' 
-      : 'bg-white/80 backdrop-blur-lg border-white/50 shadow-lg',
-    hover: theme === 'dark' ? 'hover:shadow-cyan-500/20' : 'hover:shadow-cyan-500/30',
+      ? 'bg-white/10 backdrop-blur-md border border-white/10' 
+      : 'bg-white/80 backdrop-blur-md border border-white/50 shadow-lg',
+    hover: theme === 'dark' ? 'hover:shadow-lg hover:shadow-cyan-500/20' : 'hover:shadow-lg hover:shadow-cyan-500/30',
     cardBg: theme === 'dark' ? 'bg-black/60' : 'bg-white/90'
   });
 
@@ -116,18 +116,18 @@ export default function ProjectsGallery() {
 
   if (isLoading) {
     return (
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-7xl">
-          <div className={`text-center mb-8 ${themeClasses.text}`}>
-            <p className="text-xl">{t('loading_projects')}</p>
+      <section className="py-8 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className={`text-center mb-6 ${themeClasses.text}`}>
+            <p className="text-lg">{t('loading_projects')}</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[...Array(9)].map((_, i) => (
-              <div key={i} className={`glass-effect rounded-2xl p-8 animate-pulse ${themeClasses.glass}`}>
-                <div className="w-full h-48 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-xl mb-6"></div>
-                <div className={`h-6 ${theme === 'dark' ? 'bg-white/20' : 'bg-gray-300'} rounded mb-4`}></div>
-                <div className={`h-4 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-200'} rounded mb-2`}></div>
-                <div className={`h-4 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-200'} rounded w-3/4`}></div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className={`${themeClasses.glass} rounded-lg p-4 animate-pulse`}>
+                <div className="w-full h-24 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-md mb-3"></div>
+                <div className={`h-3 ${theme === 'dark' ? 'bg-white/20' : 'bg-gray-300'} rounded mb-2`}></div>
+                <div className={`h-2 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-200'} rounded mb-1`}></div>
+                <div className={`h-2 ${theme === 'dark' ? 'bg-white/10' : 'bg-gray-200'} rounded w-3/4`}></div>
               </div>
             ))}
           </div>
@@ -137,41 +137,40 @@ export default function ProjectsGallery() {
   }
 
   return (
-    <section id="projects" className="py-20 px-6 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent">
-      <div className="container mx-auto max-w-7xl">
+    <section id="projects" className="py-8 px-4 bg-gradient-to-b from-transparent via-purple-900/20 to-transparent">
+      <div className="container mx-auto max-w-5xl">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <Rocket className={`w-8 h-8 ${themeClasses.textAccent}`} />
-            <h2 className={`text-5xl font-bold ${themeClasses.text}`}>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <Rocket className={`w-5 h-5 ${themeClasses.textAccent}`} />
+            <h2 className={`text-2xl font-bold ${themeClasses.text}`}>
               {t('featured_projects').split(' ')[0]} <span className="gradient-text">{t('featured_projects').split(' ')[1]}</span>
             </h2>
           </div>
-          <p className={`text-xl ${themeClasses.textSecondary} max-w-3xl mx-auto mb-8`}>
+          <p className={`text-sm ${themeClasses.textSecondary} max-w-xl mx-auto mb-4`}>
             {t('projects_subtitle')}
           </p>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2">
             {technologies.map((tech) => (
-              <Button
+              <button
                 key={tech.key}
-                variant={activeFilter === tech.key ? "default" : "outline"}
                 onClick={() => filterProjects(tech.key)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 ${
                   activeFilter === tech.key
                     ? 'bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white shadow-lg vibrant-glow border-0'
                     : 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-lg opacity-70 hover:opacity-100'
                 }`}
               >
-                <Filter className="w-4 h-4 mr-2" />
+                <Filter className="w-3 h-3 mr-1 inline" />
                 {tech.label === 'C#' ? 'C#' : t(tech.label)}
-              </Button>
+              </button>
             ))}
           </div>
         </motion.div>
@@ -183,8 +182,8 @@ export default function ProjectsGallery() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+              transition={{ duration: 0.4 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {filteredProjects.map((project, index) => {
                 const ProjectIcon = getProjectIcon(project);
@@ -193,169 +192,163 @@ export default function ProjectsGallery() {
                 return (
                   <motion.div
                     key={project.id}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="group relative"
                   >
                     <motion.div 
-                      whileHover={{ scale: 1.05, y: -10 }}
-                      transition={{ duration: 0.3 }}
-                      className={`glass-effect rounded-2xl overflow-hidden shadow-2xl ${themeClasses.hover} transition-all duration-500 ${themeClasses.glass}`}
+                      whileHover={{ scale: 1.02, y: -2 }}
+                      transition={{ duration: 0.2 }}
+                      className={`glass-effect rounded-lg overflow-hidden shadow-2xl ${themeClasses.hover} transition-all duration-500 ${themeClasses.glass}`}
                     >
                       
                       {/* Project Image */}
-                      <div className="relative h-40 overflow-hidden">
+                      <div className="relative h-24 overflow-hidden">
                         {project.image_url ? (
                           <img 
                             src={project.image_url} 
                             alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center">
-                            <span className="text-4xl font-bold text-white">{project.title[0]}</span>
+                            <span className="text-lg font-bold text-white">{project.title[0]}</span>
                           </div>
                         )}
                         
                         {/* Project Type Badge */}
-                        <div className={`absolute top-4 left-4 ${themeClasses.cardBg} backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
-                          theme === 'dark' ? 'border border-white/20' : 'border border-gray-300'
+                        <div className={`absolute top-1 left-1 ${themeClasses.cardBg} backdrop-blur-sm px-2 py-0.5 rounded-full text-xs font-medium flex items-center gap-1 border ${
+                          theme === 'dark' ? 'border-white/20' : 'border-gray-300'
                         }`}>
-                          <ProjectIcon className="w-3 h-3" />
+                          <ProjectIcon className="w-2 h-2" />
                           <span className={theme === 'dark' ? 'text-white' : 'text-gray-800'}>
                             {getProjectType(project)}
                           </span>
                         </div>
                         
                         {project.featured && (
-                          <div className="absolute top-4 right-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 shadow-lg vibrant-glow">
-                            <Star className="w-3 h-3" />
+                          <div className="absolute top-1 right-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-2 py-0.5 rounded-full text-xs font-medium flex items-center gap-1">
+                            <Star className="w-2 h-2" />
                             {t('featured')}
                           </div>
                         )}
-                        
-                        {/* Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                       </div>
 
                       {/* Project Content */}
-                      <div className="p-6">
-                        <h3 className={`text-xl font-bold ${themeClasses.text} mb-3 group-hover:text-cyan-400 transition-colors`}>
+                      <div className="p-3">
+                        <h3 className={`text-base font-bold ${themeClasses.text} mb-1 group-hover:text-cyan-400 transition-colors line-clamp-2`}>
                           {project.title}
                         </h3>
                         
-                        <p className={`${themeClasses.textSecondary} text-sm mb-4 leading-relaxed`}>
+                        <p className={`${themeClasses.textSecondary} text-xs mb-2 leading-relaxed line-clamp-2`}>
                           {project.description}
                         </p>
 
                         {/* Technologies */}
                         {project.technologies && (
-                          <div className="flex flex-wrap gap-2 mb-6">
+                          <div className="flex flex-wrap gap-1 mb-3">
                             {/* Always show first 3 technologies */}
                             {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                              <Badge 
+                              <span 
                                 key={techIndex}
-                                variant="secondary"
-                                className={`${
+                                className={`text-xs px-2 py-0.5 rounded-full ${
                                   theme === 'dark' 
-                                    ? 'bg-white/10 text-cyan-300 border-cyan-500/50 hover:bg-cyan-500/20' 
-                                    : 'bg-cyan-50 text-cyan-700 border-cyan-300 hover:bg-cyan-100'
-                                } transition-colors`}
+                                    ? 'bg-white/10 text-cyan-300 border border-cyan-500/50' 
+                                    : 'bg-cyan-50 text-cyan-700 border border-cyan-300'
+                                }`}
                               >
                                 {tech}
-                              </Badge>
+                              </span>
                             ))}
                             
                             {/* Show remaining technologies if expanded */}
                             {expandedTech.has(project.id) && project.technologies.length > 3 && 
                               project.technologies.slice(3).map((tech, techIndex) => (
-                                <Badge 
+                                <span 
                                   key={techIndex + 3}
-                                  variant="secondary"
-                                  className={`${
+                                  className={`text-xs px-2 py-0.5 rounded-full ${
                                     theme === 'dark' 
-                                      ? 'bg-white/10 text-cyan-300 border-cyan-500/50 hover:bg-cyan-500/20' 
-                                      : 'bg-cyan-50 text-cyan-700 border-cyan-300 hover:bg-cyan-100'
-                                  } transition-colors animate-in fade-in duration-300`}
+                                      ? 'bg-white/10 text-cyan-300 border border-cyan-500/50' 
+                                      : 'bg-cyan-50 text-cyan-700 border border-cyan-300'
+                                  } animate-in fade-in duration-300`}
                                 >
                                   {tech}
-                                </Badge>
+                                </span>
                               ))
                             }
                             
                             {/* Show +X badge or "Show Less" if there are more than 3 */}
                             {project.technologies.length > 3 && (
-                              <Badge 
-                                variant="outline" 
-                                className={`${
+                              <button 
+                                className={`text-xs px-2 py-0.5 rounded-full border transition-colors ${
                                   theme === 'dark' 
-                                    ? 'text-gray-400 border-gray-500 hover:text-cyan-300 hover:border-cyan-500 cursor-pointer' 
-                                    : 'text-gray-600 border-gray-400 hover:text-cyan-600 hover:border-cyan-500 cursor-pointer'
-                                } transition-colors`}
+                                    ? 'text-gray-400 border-gray-500 hover:text-cyan-300 hover:border-cyan-500' 
+                                    : 'text-gray-600 border-gray-400 hover:text-cyan-600 hover:border-cyan-500'
+                                }`}
                                 onClick={() => toggleTechExpansion(project.id)}
                               >
                                 {expandedTech.has(project.id) 
-                                  ? t('show_less') || 'Show Less'
+                                  ? t('show_less') || 'Less'
                                   : `+${project.technologies.length - 3}`
                                 }
-                              </Badge>
+                              </button>
                             )}
                           </div>
                         )}
 
                         {/* Action Buttons */}
-                        <div className="flex gap-3">
+                        <div className="flex gap-1">
                           {/* Web App - Visit Site Button */}
                           {project.demo_url && (
-                            <Button
-                              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg text-white border-0"
+                            <button
+                              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 text-white text-xs py-1.5 px-2 rounded-md flex items-center justify-center gap-1"
                               onClick={() => window.open(project.demo_url, '_blank')}
                             >
-                              <Globe className="w-4 h-4 mr-2" />
+                              <Globe className="w-3 h-3" />
                               {t('visit_site')}
-                            </Button>
+                            </button>
                           )}
                           
                           {/* Mobile App - App Store Buttons */}
                           {!project.demo_url && project.isMobileApp() && (
-                            <div className="flex gap-2 w-full">
+                            <div className="flex gap-1 w-full">
                               {appStoreLinks.ios && (
-                                <Button
-                                  className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white border-0 shadow-lg transition-all duration-300"
+                                <button
+                                  className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white text-xs py-1.5 px-1 rounded-md flex items-center justify-center gap-1"
                                   onClick={() => window.open(appStoreLinks.ios, '_blank')}
                                 >
-                                  <Download className="w-4 h-4 mr-1" />
+                                  <Download className="w-3 h-3" />
                                   {t('app_store')}
-                                </Button>
+                                </button>
                               )}
                               {appStoreLinks.android && (
-                                <Button
-                                  className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 shadow-lg transition-all duration-300"
+                                <button
+                                  className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white text-xs py-1.5 px-1 rounded-md flex items-center justify-center gap-1"
                                   onClick={() => window.open(appStoreLinks.android, '_blank')}
                                 >
-                                  <Download className="w-4 h-4 mr-1" />
+                                  <Download className="w-3 h-3" />
                                   {t('play_store')}
-                                </Button>
+                                </button>
                               )}
                             </div>
                           )}
                           
-                          {/* Default Application Button (neither web nor mobile app) */}
+                          {/* Default Application Button */}
                           {!project.demo_url && !project.isMobileApp() && (
-                            <Button
-                              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 shadow-lg transition-all duration-300"
+                            <button
+                              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs py-1.5 px-2 rounded-md flex items-center justify-center gap-1 opacity-50 cursor-not-allowed"
                               disabled
                             >
-                              <ExternalLink className="w-4 h-4 mr-2" />
+                              <ExternalLink className="w-3 h-3" />
                               {t('application')}
-                            </Button>
+                            </button>
                           )}
                         </div>
 
                         {/* Mobile App Store Notice */}
                         {project.isMobileApp() && (appStoreLinks.ios || appStoreLinks.android) && (
-                          <div className="mt-3 text-center">
+                          <div className="mt-1 text-center">
                             <p className="text-xs text-cyan-400 font-medium">
                               ✨ {t('available_stores')} ✨
                             </p>
@@ -371,15 +364,15 @@ export default function ProjectsGallery() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-center py-16"
+              className="text-center py-8"
             >
-              <div className={`glass-effect rounded-2xl p-12 max-w-md mx-auto ${themeClasses.glass}`}>
-                <h3 className={`text-2xl font-bold ${themeClasses.text} mb-4`}>{t('no_projects_found')}</h3>
-                <p className={`${themeClasses.textSecondary} mb-6`}>
+              <div className={`${themeClasses.glass} rounded-lg p-6 max-w-sm mx-auto`}>
+                <h3 className={`text-lg font-bold ${themeClasses.text} mb-2`}>{t('no_projects_found')}</h3>
+                <p className={`${themeClasses.textSecondary} mb-3 text-sm`}>
                   {t('try_different_filter')}
                 </p>
-                <div className="w-20 h-20 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-2xl flex items-center justify-center vibrant-glow">
-                  <span className="text-3xl">🔍</span>
+                <div className="w-12 h-12 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
+                  <span className="text-lg">🔍</span>
                 </div>
               </div>
             </motion.div>

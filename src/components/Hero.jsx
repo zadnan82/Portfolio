@@ -68,11 +68,7 @@ export default function HeroSection() {
 
   // Function to handle CV download
   const handleDownloadCV = () => {
-    // You can either:
-    // 1. Link to a CV file in your public folder
-    const cvUrl = '/cv/Zainab_Adnan_CV.pdf'; // Place your CV in public/cv/ folder
-    
-    // 2. Or create a download link
+    const cvUrl = '/cv/Zainab_Adnan_CV.pdf';
     const link = document.createElement('a');
     link.href = cvUrl;
     link.download = 'Zainab_Adnan_CV.pdf';
@@ -101,42 +97,41 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden py-8">
+      <div className="container mx-auto px-4 relative z-10 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-6"
           >
-            <div className="space-y-4">
+            <div className="space-y-3">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className={`flex items-center gap-3 ${themeClasses.textCyan} font-medium tracking-wider uppercase text-sm`}
+                className={`flex items-center gap-2 ${themeClasses.textCyan} font-medium tracking-wider uppercase text-xs`}
               >
-                {/* ZA Logo Image */}
+                {/* ZA Logo Image - Made bigger */}
                 <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg vibrant-glow">
                   <img 
                     src={init}
                     alt="ZA Logo"
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      // Fallback if image doesn't load
                       e.target.style.display = 'none';
                       e.target.parentElement.innerHTML = `
                         <div class="w-full h-full bg-gradient-to-r from-cyan-400 to-purple-400 flex items-center justify-center rounded-lg">
-                          <span class="text-white font-bold text-sm">ZA</span>
+                          <span class="text-white font-bold text-xs">ZA</span>
                         </div>
                       `;
                     }}
                   />
                 </div>
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-3 h-3" />
                 {t('welcome')}
               </motion.div>
               
@@ -144,7 +139,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className={`text-6xl lg:text-7xl font-bold ${themeClasses.text} leading-tight`}
+                className={`text-2xl lg:text-3xl font-bold ${themeClasses.text} leading-tight`}
               >
                 Zainab
                 <span className="gradient-text block">Adnan</span>
@@ -154,9 +149,9 @@ export default function HeroSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
-                className={`text-2xl lg:text-3xl ${themeClasses.textAccent} font-light h-12 flex items-center gap-2`}
+                className={`text-base lg:text-lg ${themeClasses.textAccent} font-light h-6 flex items-center gap-2`}
               >
-                <Zap className={`w-8 h-8 ${themeClasses.textOrange}`} />
+                <Zap className={`w-4 h-4 ${themeClasses.textOrange}`} />
                 {text}
                 <span className={`animate-pulse ${themeClasses.textPink}`}>|</span>
               </motion.div>
@@ -166,7 +161,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
-              className={`text-lg ${themeClasses.textSecondary} leading-relaxed max-w-xl`}
+              className={`text-xs ${themeClasses.textSecondary} leading-relaxed max-w-lg`}
             >
               {t('hero_description')}
             </motion.p>
@@ -175,13 +170,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-3"
             >
               <Button 
                 onClick={handleDownloadCV}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-8 py-3 rounded-full text-white font-medium shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 vibrant-glow hover:scale-105"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 px-4 py-2 rounded-full text-white text-sm font-medium shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 vibrant-glow hover:scale-105"
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-3 h-3 mr-2" />
                 {t('download_cv')}
               </Button>
               
@@ -192,9 +187,9 @@ export default function HeroSection() {
                   theme === 'dark' 
                     ? 'border-pink-400 text-pink-400 hover:bg-pink-500 hover:text-white' 
                     : 'border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white'
-                } px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105`}
+                } px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105`}
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-3 h-3 mr-2" />
                 {t('get_in_touch')}
               </Button>
             </motion.div>
@@ -203,22 +198,22 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.6 }}
-              className="flex items-center gap-6 pt-4"
+              className="flex items-center gap-4 pt-3"
             >
-              <div className={`flex items-center gap-2 ${themeClasses.textEmerald}`}>
-                <Mail className="w-4 h-4" />
+              <div className={`flex items-center gap-1 ${themeClasses.textEmerald}`}>
+                <Mail className="w-3 h-3" />
                 <a 
                   href="mailto:zadnaniths@gmail.com" 
-                  className="text-sm hover:underline transition-all duration-300"
+                  className="text-xs hover:underline transition-all duration-300"
                 >
                   zadnaniths@gmail.com
                 </a>
               </div>
-              <div className={`flex items-center gap-2 ${themeClasses.textOrange}`}>
-                <Phone className="w-4 h-4" />
+              <div className={`flex items-center gap-1 ${themeClasses.textOrange}`}>
+                <Phone className="w-3 h-3" />
                 <a 
                   href="tel:+46736953102" 
-                  className="text-sm hover:underline transition-all duration-300"
+                  className="text-xs hover:underline transition-all duration-300"
                 >
                   +46 73 695 31 02
                 </a>
@@ -226,7 +221,7 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Profile Image */}
+          {/* Right Content - Profile Image with ALL ORIGINAL SHADOWS AND MORE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -234,57 +229,117 @@ export default function HeroSection() {
             className="relative"
           >
             <div className="relative floating-animation">
-              <div className="w-96 h-96 mx-auto relative">
+              <div className="w-48 h-48 mx-auto relative">
+                {/* MULTIPLE SHADOW LAYERS FOR MAXIMUM GLOW */}
                 <div className={`absolute inset-0 ${themeClasses.avatarGlow} rounded-full opacity-30 blur-3xl vibrant-glow`}></div>
-                <div className="relative glass-effect rounded-full p-8 shadow-2xl">
-                  <div className={`w-full h-full ${themeClasses.avatarGlow} rounded-full flex items-center justify-center`}>
-                    <div className={`w-64 h-64 ${themeClasses.gradient} rounded-full flex items-center justify-center border-4 ${
+                <div className={`absolute inset-[-5px] ${themeClasses.avatarGlow} rounded-full opacity-20 blur-2xl vibrant-glow`}></div>
+                <div className={`absolute inset-[-10px] ${themeClasses.avatarGlow} rounded-full opacity-15 blur-xl vibrant-glow`}></div>
+                
+                <div className="relative glass-effect rounded-full p-6 shadow-2xl">
+                  <div className={`w-full h-full ${themeClasses.avatarGlow} rounded-full flex items-center justify-center vibrant-glow shadow-2xl`}>
+                    <div className={`w-36 h-36 ${themeClasses.gradient} rounded-full flex items-center justify-center border-4 ${
                       theme === 'dark' ? 'border-white/20' : 'border-white/50'
-                    } relative overflow-hidden`}>
+                    } relative overflow-hidden shadow-2xl`}>
                       {!imageError ? (
                         <img 
                           src={profileImage}
                           alt="Zainab Adnan"
-                          className="w-full h-full object-cover rounded-full"
+                          className="w-full h-full object-cover rounded-full shadow-2xl"
                           onError={() => setImageError(true)}
                         />
                       ) : (
-                        <span className={`text-6xl font-bold bg-gradient-to-r ${
+                        <span className={`text-3xl font-bold bg-gradient-to-r ${
                           theme === 'dark' 
                             ? 'from-cyan-400 to-purple-400' 
                             : 'from-cyan-600 to-purple-600'
-                        } bg-clip-text text-transparent`}>ZA</span>
+                        } bg-clip-text text-transparent shadow-2xl`}>ZA</span>
                       )}
+                      {/* Multiple inner shadow layers */}
+                      <div className="absolute inset-0 rounded-full shadow-inner"></div>
+                      <div className="absolute inset-0 rounded-full shadow-2xl"></div>
                     </div>
+                    {/* Extra inner glow layers */}
+                    <div className={`absolute inset-0 ${themeClasses.avatarGlow} rounded-full opacity-20 blur-2xl vibrant-glow`}></div>
+                    <div className={`absolute inset-2 ${themeClasses.avatarGlow} rounded-full opacity-15 blur-xl vibrant-glow`}></div>
                   </div>
+                  {/* Outer container shadows */}
+                  <div className="absolute inset-0 rounded-full shadow-2xl vibrant-glow"></div>
+                  <div className="absolute inset-[-2px] rounded-full shadow-xl opacity-50"></div>
                 </div>
+                
+                {/* Extended outer glow */}
+                <div className={`absolute inset-[-15px] ${themeClasses.avatarGlow} rounded-full opacity-10 blur-3xl vibrant-glow`}></div>
+                <div className={`absolute inset-[-20px] ${themeClasses.avatarGlow} rounded-full opacity-5 blur-3xl vibrant-glow`}></div>
               </div>
             </div>
             
-            {/* Floating Elements */}
+            {/* Floating Elements with Enhanced Shadows */}
             <motion.div
               animate={{ rotate: 360, y: [0, -10, 0] }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute top-10 right-10 w-20 h-20 glass-effect rounded-2xl flex items-center justify-center bg-gradient-to-r from-orange-500 to-pink-500"
+              className="absolute top-6 right-6 w-12 h-12 glass-effect rounded-2xl flex items-center justify-center bg-gradient-to-r from-orange-500 to-pink-500 shadow-2xl vibrant-glow"
             >
-              <span className="text-2xl">🚀</span>
+              <span className="text-lg">🚀</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl opacity-50 blur-lg shadow-2xl"></div>
+              <div className="absolute inset-[-5px] bg-gradient-to-r from-orange-500 to-pink-500 rounded-2xl opacity-30 blur-xl"></div>
             </motion.div>
             
             <motion.div
               animate={{ rotate: -360, y: [0, 10, 0] }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute bottom-10 left-10 w-16 h-16 glass-effect rounded-xl flex items-center justify-center bg-gradient-to-r from-green-500 to-emerald-500"
+              className="absolute bottom-6 left-6 w-10 h-10 glass-effect rounded-xl flex items-center justify-center bg-gradient-to-r from-green-500 to-emerald-500 shadow-2xl vibrant-glow"
             >
-              <span className="text-xl">💻</span>
+              <span className="text-base">💻</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl opacity-50 blur-lg shadow-2xl"></div>
+              <div className="absolute inset-[-5px] bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl opacity-30 blur-xl"></div>
             </motion.div>
 
             <motion.div
               animate={{ scale: [1, 1.2, 1], rotate: [0, 180, 360] }}
               transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-0 w-12 h-12 glass-effect rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500"
+              className="absolute top-1/2 left-0 w-8 h-8 glass-effect rounded-full flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 shadow-2xl vibrant-glow"
             >
-              <span className="text-lg">⚡</span>
+              <span className="text-sm">⚡</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-50 blur-lg shadow-2xl"></div>
+              <div className="absolute inset-[-5px] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-30 blur-xl"></div>
             </motion.div>
+
+            {/* Enhanced Ambient Particles with Individual Shadows */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.8, 0.3],
+                  rotate: [0, 360]
+                }}
+                transition={{
+                  duration: 4 + i,
+                  repeat: Infinity,
+                  delay: i * 0.5
+                }}
+                className="absolute w-2 h-2 rounded-full shadow-2xl vibrant-glow"
+                style={{
+                  background: ['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#f97316', '#ef4444'][i],
+                  left: `${15 + i * 10}%`,
+                  top: `${10 + (i % 4) * 20}%`,
+                  boxShadow: `0 0 20px ${['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#f97316', '#ef4444'][i]}60, 0 0 40px ${['#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f59e0b', '#10b981', '#f97316', '#ef4444'][i]}30`
+                }}
+              />
+            ))}
+
+            {/* Additional Orbital Rings */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border border-cyan-400/20 rounded-full opacity-60"
+            ></motion.div>
+            
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-4 border border-purple-400/20 rounded-full opacity-40"
+            ></motion.div>
           </motion.div>
         </div>
       </div>
@@ -294,15 +349,15 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className={`flex flex-col items-center gap-2 ${themeClasses.textCyan}`}
+          className={`flex flex-col items-center gap-1 ${themeClasses.textCyan}`}
         >
-          <span className="text-sm font-medium">{t('scroll_explore')}</span>
-          <ChevronDown className="w-6 h-6" />
+          <span className="text-xs font-medium">{t('scroll_explore')}</span>
+          <ChevronDown className="w-4 h-4" />
         </motion.div>
       </motion.div>
     </section>
