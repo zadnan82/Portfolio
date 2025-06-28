@@ -7,17 +7,18 @@ const educations = [
   {
     degree: "ai_developer_program",
     school: "iths",
-    period: "period_2024_2025",
+    period: "period_2024_2026",
     location: "stockholm_sweden",
     status: "ongoing",
     description: "advanced_artificial_intelligence",
     icon: Brain,
     color: "from-purple-500 to-pink-500"
   },
+  
   {
     degree: "machine_learning_program",
     school: "teknik_hogskolan",
-    period: "period_2024_2025",
+    period: "period_2024_2026",
     location: "stockholm_sweden",
     status: "ongoing",
     description: "specialized_machine_learning",
@@ -27,20 +28,20 @@ const educations = [
   {
     degree: "net_developer",
     school: "kyh_hogskolan",
-    period: "period_ongoing",
+    period: "period_completed",
     location: "stockholm_sweden",
-    status: "graduating_2024",
+    status: "graduated",
     description: "full_stack_net",
     icon: Code,
     color: "from-emerald-500 to-green-500"
   },
   {
-    degree: "mobile_web_developer",
+    degree: "iot_developer",
     school: "sti_hogskolan",
-    period: "period_ongoing",
+    period: "period_completed",
     location: "stockholm_sweden",
-    status: "graduated_2023",
-    description: "mobile_web_development",
+    status: "graduated",
+    description: "iot_development",
     icon: Code,
     color: "from-orange-500 to-amber-500"
   },
@@ -49,7 +50,7 @@ const educations = [
     school: "it_hogskolan",
     period: "period_completed",
     location: "stockholm_sweden",
-    status: "graduated_2023",
+    status: "graduated",
     description: "comprehensive_development",
     icon: Code,
     color: "from-indigo-500 to-purple-500"
@@ -59,7 +60,7 @@ const educations = [
     school: "cesar_ritz",
     period: "period_completed",
     location: "brig_switzerland",
-    status: "graduated_2006",
+    status: "graduated",
     description: "international_hospitality",
     icon: GraduationCap,
     color: "from-pink-500 to-rose-500"
