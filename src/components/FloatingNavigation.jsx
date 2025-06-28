@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Briefcase, GraduationCap, Code, FolderOpen, Mail, Menu, X } from 'lucide-react';
+import { Home, FolderOpen, Code, Briefcase, GraduationCap, Mail, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { t, getCurrentTheme, getCurrentLanguage } from './utils/i18n';
 import LanguageSelector from './LanguageSelector';
@@ -8,10 +8,10 @@ import ThemeToggle from './ThemeToggle';
 
 const navigationItems = [
   { id: 'hero', label: 'home', icon: Home, color: 'from-blue-500 to-cyan-500' },
+  { id: 'projects', label: 'projects', icon: FolderOpen, color: 'from-indigo-500 to-purple-500' },
+  { id: 'skills', label: 'skills', icon: Code, color: 'from-orange-500 to-amber-500' },
   { id: 'experience', label: 'experience', icon: Briefcase, color: 'from-purple-500 to-pink-500' },
   { id: 'education', label: 'education', icon: GraduationCap, color: 'from-green-500 to-emerald-500' },
-  { id: 'skills', label: 'skills', icon: Code, color: 'from-orange-500 to-amber-500' },
-  { id: 'projects', label: 'projects', icon: FolderOpen, color: 'from-indigo-500 to-purple-500' },
   { id: 'contact', label: 'contact', icon: Mail, color: 'from-pink-500 to-rose-500' }
 ];
 
@@ -46,19 +46,43 @@ export default function FloatingNavigation({ onLanguageChange }) {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navigationItems.map(item => item.id);
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Use middle of viewport for better detection
 
-      for (let i = sections.length - 1; i >= 0; i--) {
+      // Find the section that's currently most visible
+      let currentSection = 'hero'; // default
+      
+      for (let i = 0; i < sections.length; i++) {
         const element = document.getElementById(sections[i]);
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const elementTop = rect.top + window.scrollY;
+          const elementBottom = elementTop + rect.height;
+          
+          // Check if the middle of the viewport intersects with this section
+          if (scrollPosition >= elementTop && scrollPosition < elementBottom) {
+            currentSection = sections[i];
+            break;
+          }
         }
       }
+      
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Add debouncing to improve performance
+    let timeoutId;
+    const debouncedHandleScroll = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleScroll, 10);
+    };
+
+    window.addEventListener('scroll', debouncedHandleScroll, { passive: true });
+    handleScroll(); // Call once on mount
+    
+    return () => {
+      window.removeEventListener('scroll', debouncedHandleScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   const scrollToSection = (sectionId) => {
@@ -113,7 +137,7 @@ export default function FloatingNavigation({ onLanguageChange }) {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 shadow-2xl vibrant-glow ${themeClasses.text}`}
+          className="w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 shadow-2xl vibrant-glow text-white border-0"
         >
           <AnimatePresence mode="wait">
             {isOpen ? (

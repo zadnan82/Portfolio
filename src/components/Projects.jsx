@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '../entities/Project';
-import { Github, ExternalLink, Star, Filter, Smartphone, Globe, Download, Rocket } from 'lucide-react';
+import { ExternalLink, Star, Filter, Smartphone, Globe, Download, Rocket } from 'lucide-react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { t, getCurrentTheme } from './utils/i18n';
@@ -12,6 +12,7 @@ export default function ProjectsGallery() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState('dark');
+  const [expandedTech, setExpandedTech] = useState(new Set());
 
   useEffect(() => {
     setTheme(getCurrentTheme());
@@ -61,12 +62,13 @@ export default function ProjectsGallery() {
       setFilteredProjects(projects);
     } else if (tech === 'Mobile Apps') {
       setFilteredProjects(projects.filter(project => 
-        project.technologies?.some(t => ['Flutter', 'React Native', 'Swift', 'Kotlin'].includes(t)) ||
-        ['Giggli Spectrum Autism', 'Cosmetics Checker', 'Check My Food Ingredients', 'Mobile Customer Service App'].includes(project.title)
+        project.isMobileApp() || 
+        project.technologies?.some(t => ['Flutter', 'React Native', 'Swift', 'Kotlin', 'SwiftUI', 'Dart'].includes(t))
       ));
     } else if (tech === 'Web Apps') {
       setFilteredProjects(projects.filter(project => 
-        project.demo_url || project.technologies?.some(t => ['React', 'Vue.js', 'Node.js', '.NET'].includes(t))
+        project.demo_url || 
+        project.technologies?.some(t => ['React', 'Vue.js', 'Node.js', '.NET', 'JavaScript'].includes(t))
       ));
     } else {
       setFilteredProjects(projects.filter(project => 
@@ -77,14 +79,26 @@ export default function ProjectsGallery() {
 
   const getProjectIcon = (project) => {
     if (project.demo_url) return Globe;
-    if (project.technologies?.some(t => ['Flutter', 'React Native', 'Swift', 'Kotlin'].includes(t))) return Smartphone;
+    if (project.isMobileApp()) return Smartphone;
     return ExternalLink;
   };
 
   const getProjectType = (project) => {
     if (project.demo_url) return t('website');
-    if (project.technologies?.some(t => ['Flutter', 'React Native', 'Swift', 'Kotlin'].includes(t))) return t('mobile_app');
+    if (project.isMobileApp()) return t('mobile_app');
     return t('application');
+  };
+
+  const toggleTechExpansion = (projectId) => {
+    setExpandedTech(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(projectId)) {
+        newSet.delete(projectId);
+      } else {
+        newSet.add(projectId);
+      }
+      return newSet;
+    });
   };
 
   const getThemeClasses = () => ({
@@ -151,10 +165,8 @@ export default function ProjectsGallery() {
                 onClick={() => filterProjects(tech.key)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   activeFilter === tech.key
-                    ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg vibrant-glow'
-                    : theme === 'dark'
-                      ? 'border-cyan-300 text-white hover:bg-cyan-400 hover:text-gray-900'
-                      : 'border-cyan-600 text-cyan-600 hover:bg-cyan-500 hover:text-black'
+                    ? 'bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white shadow-lg vibrant-glow border-0'
+                    : 'bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-lg opacity-70 hover:opacity-100'
                 }`}
               >
                 <Filter className="w-4 h-4 mr-2" />
@@ -176,6 +188,8 @@ export default function ProjectsGallery() {
             >
               {filteredProjects.map((project, index) => {
                 const ProjectIcon = getProjectIcon(project);
+                const appStoreLinks = project.getAppStoreLinks();
+                
                 return (
                   <motion.div
                     key={project.id}
@@ -191,7 +205,7 @@ export default function ProjectsGallery() {
                     >
                       
                       {/* Project Image */}
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-40 overflow-hidden">
                         {project.image_url ? (
                           <img 
                             src={project.image_url} 
@@ -205,7 +219,7 @@ export default function ProjectsGallery() {
                         )}
                         
                         {/* Project Type Badge */}
-                        <div className={`absolute top-4 left-4 ${themeClasses.cardBg} backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
+                        <div className={`absolute top-4 left-4 ${themeClasses.cardBg} backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
                           theme === 'dark' ? 'border border-white/20' : 'border border-gray-300'
                         }`}>
                           <ProjectIcon className="w-3 h-3" />
@@ -238,6 +252,7 @@ export default function ProjectsGallery() {
                         {/* Technologies */}
                         {project.technologies && (
                           <div className="flex flex-wrap gap-2 mb-6">
+                            {/* Always show first 3 technologies */}
                             {project.technologies.slice(0, 3).map((tech, techIndex) => (
                               <Badge 
                                 key={techIndex}
@@ -251,16 +266,39 @@ export default function ProjectsGallery() {
                                 {tech}
                               </Badge>
                             ))}
+                            
+                            {/* Show remaining technologies if expanded */}
+                            {expandedTech.has(project.id) && project.technologies.length > 3 && 
+                              project.technologies.slice(3).map((tech, techIndex) => (
+                                <Badge 
+                                  key={techIndex + 3}
+                                  variant="secondary"
+                                  className={`${
+                                    theme === 'dark' 
+                                      ? 'bg-white/10 text-cyan-300 border-cyan-500/50 hover:bg-cyan-500/20' 
+                                      : 'bg-cyan-50 text-cyan-700 border-cyan-300 hover:bg-cyan-100'
+                                  } transition-colors animate-in fade-in duration-300`}
+                                >
+                                  {tech}
+                                </Badge>
+                              ))
+                            }
+                            
+                            {/* Show +X badge or "Show Less" if there are more than 3 */}
                             {project.technologies.length > 3 && (
                               <Badge 
                                 variant="outline" 
                                 className={`${
                                   theme === 'dark' 
-                                    ? 'text-gray-400 border-gray-500' 
-                                    : 'text-gray-600 border-gray-400'
-                                }`}
+                                    ? 'text-gray-400 border-gray-500 hover:text-cyan-300 hover:border-cyan-500 cursor-pointer' 
+                                    : 'text-gray-600 border-gray-400 hover:text-cyan-600 hover:border-cyan-500 cursor-pointer'
+                                } transition-colors`}
+                                onClick={() => toggleTechExpansion(project.id)}
                               >
-                                +{project.technologies.length - 3}
+                                {expandedTech.has(project.id) 
+                                  ? t('show_less') || 'Show Less'
+                                  : `+${project.technologies.length - 3}`
+                                }
                               </Badge>
                             )}
                           </div>
@@ -268,68 +306,55 @@ export default function ProjectsGallery() {
 
                         {/* Action Buttons */}
                         <div className="flex gap-3">
-                          {project.github_url && (
+                          {/* Web App - Visit Site Button */}
+                          {project.demo_url && (
                             <Button
-                              variant="outline"
-                              size="sm"
-                              className={`flex-1 ${
-                                theme === 'dark' 
-                                  ? 'border-purple-400 text-purple-400 hover:bg-purple-500 hover:text-white' 
-                                  : 'border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white'
-                              } transition-all duration-300`}
-                              onClick={() => window.open(project.github_url, '_blank')}
-                            >
-                              <Github className="w-4 h-4 mr-2" />
-                              {t('code')}
-                            </Button>
-                          )}
-                          
-                          {project.demo_url ? (
-                            <Button
-                              size="sm"
-                              className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg"
+                              className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg text-white border-0"
                               onClick={() => window.open(project.demo_url, '_blank')}
                             >
                               <Globe className="w-4 h-4 mr-2" />
                               {t('visit_site')}
                             </Button>
-                          ) : (
-                            // Mobile App Store Links
-                            ['Giggli Spectrum Autism', 'Cosmetics Checker', 'Check My Food Ingredients'].includes(project.title) && (
-                              <div className="flex gap-2 w-full">
+                          )}
+                          
+                          {/* Mobile App - App Store Buttons */}
+                          {!project.demo_url && project.isMobileApp() && (
+                            <div className="flex gap-2 w-full">
+                              {appStoreLinks.ios && (
                                 <Button
-                                  variant="outline"
-                                  size="sm"
-                                  className={`flex-1 ${
-                                    theme === 'dark' 
-                                      ? 'border-green-400 text-green-400 hover:bg-green-500 hover:text-white' 
-                                      : 'border-green-500 text-green-500 hover:bg-green-500 hover:text-white'
-                                  } transition-all duration-300`}
-                                  disabled
+                                  className="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white border-0 shadow-lg transition-all duration-300"
+                                  onClick={() => window.open(appStoreLinks.ios, '_blank')}
                                 >
                                   <Download className="w-4 h-4 mr-1" />
                                   {t('app_store')}
                                 </Button>
+                              )}
+                              {appStoreLinks.android && (
                                 <Button
-                                  variant="outline"
-                                  size="sm"
-                                  className={`flex-1 ${
-                                    theme === 'dark' 
-                                      ? 'border-emerald-400 text-emerald-400 hover:bg-emerald-500 hover:text-white' 
-                                      : 'border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white'
-                                  } transition-all duration-300`}
-                                  disabled
+                                  className="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white border-0 shadow-lg transition-all duration-300"
+                                  onClick={() => window.open(appStoreLinks.android, '_blank')}
                                 >
                                   <Download className="w-4 h-4 mr-1" />
                                   {t('play_store')}
                                 </Button>
-                              </div>
-                            )
+                              )}
+                            </div>
+                          )}
+                          
+                          {/* Default Application Button (neither web nor mobile app) */}
+                          {!project.demo_url && !project.isMobileApp() && (
+                            <Button
+                              className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 shadow-lg transition-all duration-300"
+                              disabled
+                            >
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              {t('application')}
+                            </Button>
                           )}
                         </div>
 
                         {/* Mobile App Store Notice */}
-                        {['Giggli Spectrum Autism', 'Cosmetics Checker', 'Check My Food Ingredients'].includes(project.title) && (
+                        {project.isMobileApp() && (appStoreLinks.ios || appStoreLinks.android) && (
                           <div className="mt-3 text-center">
                             <p className="text-xs text-cyan-400 font-medium">
                               ✨ {t('available_stores')} ✨

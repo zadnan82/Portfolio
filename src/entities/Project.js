@@ -16,6 +16,10 @@ export class Project {
     this.image_url = data.image_url || null;
     this.featured = data.featured || false;
     
+    // App store links for mobile apps
+    this.app_store_url = data.app_store_url || null;
+    this.google_play_url = data.google_play_url || null;
+    
     // Additional fields for internal use
     this.id = data.id || Math.random().toString(36).substr(2, 9);
     this.created_date = data.created_date || new Date().toISOString();
@@ -26,102 +30,64 @@ export class Project {
     const mockProjects = [
       {
         id: '1',
-        title: 'AI Customer Service Platform',
-        description: 'Intelligent customer service platform powered by machine learning algorithms for automated response generation, sentiment analysis, and real-time chat support.',
-        technologies: ['C#', '.NET Core', 'AI/ML', 'React', 'SQL Server', 'Azure'],
-        github_url: 'https://github.com/zainab-portfolio/ai-customer-service',
-        demo_url: null,
-        image_url: null,
+        title: 'Cvati.com - Professional Career Platform',
+        description: 'A sophisticated web platform for creating professional CVs with AI-powered content suggestions, multiple templates, and export capabilities. Features real-time editing and collaborative tools.',
+        technologies: ['React', 'Node.js', 'Postgres', 'AI/ML', 'Docker', 'JavaScript', 'Celery', 'Redis', 'AWS', 'FastAPI' ],
+        demo_url: 'https://cvati.com',
+        github_url: '',
+        image_url: '/assets/logo2.png',
         featured: true,
-        created_date: '2024-03-15T00:00:00Z'
+        created_date: '2025-04-10'
       },
       {
         id: '2',
         title: 'Giggli Spectrum Autism',
         description: 'Educational mobile app designed to support children with autism through interactive learning modules, progress tracking, and personalized therapy activities.',
-        technologies: ['Flutter', 'Dart', 'SQLite', 'Provider', 'Firebase'],
-        github_url: 'https://github.com/zainab-portfolio/giggli-app',
+        technologies: ['Kotlin', 'SwiftUI', 'Firebase' ],
+        github_url: '',
         demo_url: null,
-        image_url: null,
+        image_url: '/assets/logo3.png',
+        app_store_url: 'https://apps.apple.com/se/app/giggli-spectrum-autism/id1629904859',
+        google_play_url: ' ',
         featured: true,
-        created_date: '2024-02-20T00:00:00Z'
+        created_date: '2022-02-02'
       },
       {
         id: '3',
         title: 'Cosmetics Checker',
         description: 'Mobile app that helps users check cosmetic ingredients for safety, compatibility with skin types, and potential allergen warnings.',
-        technologies: ['Flutter', 'Dart', 'REST API', 'SQLite', 'Barcode Scanner'],
-        github_url: 'https://github.com/zainab-portfolio/cosmetics-checker',
+        technologies: ['Flutter', 'Dart', 'REST API'],
+        github_url: '',
         demo_url: null,
-        image_url: null,
+        image_url: '/assets/logo5.png',
+        app_store_url: 'https://apps.apple.com/us/app/cosmetics-checker/id6447474601',
+        google_play_url: 'https://play.google.com/store/apps/details?id=com.zainabadnan.scanmylotions',
         featured: true,
-        created_date: '2024-01-10T00:00:00Z'
+        created_date: '2023-03-10'
       },
       {
         id: '4',
         title: 'Check My Food Ingredients',
         description: 'Food ingredient analysis app that provides detailed nutritional information, allergen warnings, and dietary compatibility checks.',
-        technologies: ['Flutter', 'Dart', 'Food API', 'SQLite', 'Machine Learning'],
-        github_url: 'https://github.com/zainab-portfolio/food-checker',
+        technologies: ['Flutter', 'Dart' ,'REST API'],
+        github_url: '',
         demo_url: null,
-        image_url: null,
+        image_url: '/assets/logo4.png',
+        app_store_url: 'https://apps.apple.com/gb/app/check-my-food-ingredients/id6446487831',
+        google_play_url: ' ',
         featured: true,
-        created_date: '2023-12-05T00:00:00Z'
+        created_date: '2023-03-10'
       },
       {
         id: '5',
-        title: 'E-Commerce Management Platform',
-        description: 'Comprehensive e-commerce solution with inventory management, order processing, customer analytics, and multi-payment gateway integration.',
-        technologies: ['C#', '.NET Core', 'React', 'SQL Server', 'Stripe API', 'Azure'],
-        github_url: 'https://github.com/zainab-portfolio/ecommerce-platform',
-        demo_url: 'https://ecommerce-demo.zainabadnan.com',
-        image_url: null,
-        featured: false,
-        created_date: '2023-11-15T00:00:00Z'
-      },
-      {
-        id: '6',
-        title: 'Real Estate Management System',
-        description: 'Property management platform with tenant tracking, lease management, maintenance scheduling, and comprehensive financial reporting.',
-        technologies: ['C#', '.NET Core', 'SQL Server', 'React', 'Bootstrap', 'Crystal Reports'],
-        github_url: 'https://github.com/zainab-portfolio/real-estate-system',
-        demo_url: null,
-        image_url: null,
-        featured: false,
-        created_date: '2023-10-20T00:00:00Z'
-      },
-      {
-        id: '7',
-        title: 'Machine Learning Analytics Dashboard',
-        description: 'Advanced data visualization dashboard for ML model predictions with real-time analytics, performance metrics, and automated reporting.',
-        technologies: ['Python', 'React', 'D3.js', 'TensorFlow', 'PostgreSQL', 'Docker'],
-        github_url: 'https://github.com/zainab-portfolio/ml-dashboard',
-        demo_url: 'https://ml-analytics.zainabadnan.com',
-        image_url: null,
-        featured: false,
-        created_date: '2023-09-10T00:00:00Z'
-      },
-      {
-        id: '8',
-        title: 'Hotel Management Suite',
-        description: 'Complete hospitality management solution with booking system, guest services, housekeeping coordination, and revenue optimization.',
-        technologies: ['C#', '.NET', 'Oracle', 'WPF', 'Crystal Reports', 'Payment Gateway'],
-        github_url: 'https://github.com/zainab-portfolio/hotel-management',
-        demo_url: null,
-        image_url: null,
-        featured: false,
-        created_date: '2023-08-05T00:00:00Z'
-      },
-      {
-        id: '9',
-        title: 'Mobile Customer Service App',
-        description: 'Enterprise mobile application for customer service representatives with offline support, data synchronization, and real-time notifications.',
-        technologies: ['Kotlin', 'Android', 'Room Database', 'Retrofit', 'Firebase', 'Push Notifications'],
-        github_url: 'https://github.com/zainab-portfolio/mobile-customer-service',
-        demo_url: null,
-        image_url: null,
-        featured: false,
-        created_date: '2023-07-15T00:00:00Z'
+        title: 'Mätkilen1 Bostadsförening',
+        description: 'A simple website for a housing cooperative managing two modern residential buildings in Stockholm. It features a board meeting notices, annual meeting announcements, maintenance scheduling system, financial reports and community news updates.',
+        technologies: ['React', 'Node.js', 'JavaScript' ],
+        demo_url: 'http://matkilen1.se/',
+        github_url: '',
+        image_url: '/assets/logo6.jpg',
+        featured: true,
+        created_date: '2021-12-10'
       }
     ];
 
@@ -162,6 +128,19 @@ export class Project {
     return projects.filter(project => project.featured);
   }
 
+  // Check if project is a mobile app (has app store links)
+  isMobileApp() {
+    return this.app_store_url || this.google_play_url;
+  }
+
+  // Get app store links
+  getAppStoreLinks() {
+    return {
+      ios: this.app_store_url,
+      android: this.google_play_url
+    };
+  }
+
   // Validate project data against schema
   validate() {
     const errors = [];
@@ -188,6 +167,14 @@ export class Project {
     
     if (this.image_url && typeof this.image_url !== 'string') {
       errors.push('Image URL must be a string');
+    }
+    
+    if (this.app_store_url && typeof this.app_store_url !== 'string') {
+      errors.push('App Store URL must be a string');
+    }
+    
+    if (this.google_play_url && typeof this.google_play_url !== 'string') {
+      errors.push('Google Play URL must be a string');
     }
     
     if (this.featured !== undefined && typeof this.featured !== 'boolean') {

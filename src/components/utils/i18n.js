@@ -11,7 +11,7 @@ const translations = {
     
     // Hero Section
     welcome: "Welcome to my digital space",
-    title_role: "Sophisticated Developer & Regional Manager",
+    title_role: "Full-Stack Developer & AI Engineer",
     hero_description: "Bridging business excellence with cutting-edge technology. From managing regional operations across UAE, Qatar, and Jordan to mastering full-stack development with AI and machine learning expertise.",
     download_cv: "Download CV",
     get_in_touch: "Get In Touch",
@@ -92,11 +92,16 @@ const translations = {
     ritz_carlton: "Ritz Carlton Hotel",
     
     // Education Programs
+    engineer_ai_ml: "Engineer AI and Machine Learning",
     ai_developer_program: "AI Developer Program",
     machine_learning_program: "Machine Learning Program",
     net_developer: ".Net Developer",
     mobile_web_developer: "Application Developer - Mobile & Web",
     hospitality_diploma: "Higher Diploma in Hotel & Hospitality Management",
+    iot_developer: "System Developer Embedded Systems (Internet of Things)",
+    
+
+
     
     // Schools
     iths: "ITHS",
@@ -165,6 +170,7 @@ const translations = {
     mobile_web_development: "Mobile and web application development",
     comprehensive_development: "Comprehensive mobile and web development program",
     international_hospitality: "International hospitality administration and business management",
+    iot_development: "Embedded systems and IoT development",
     
     // Time periods
     december_2011_june_2019: "December 2011 – June 2019",
@@ -172,6 +178,7 @@ const translations = {
     december_2007_may_2010: "December 2007 – May 2010",
     october_2006_november_2007: "October 2006 – November 2007",
     period_2024_2025: "2024 - 2025",
+    period_2024_2026: "2024 - 2026",
     period_ongoing: "Ongoing",
     period_completed: "Completed",
     
@@ -199,9 +206,11 @@ const translations = {
     ml_dashboard_desc: "Advanced data visualization dashboard for ML model predictions with real-time analytics, performance metrics, and automated reporting.",
     hotel_management_desc: "Complete hospitality management solution with booking system, guest services, housekeeping coordination, and revenue optimization.",
     mobile_customer_desc: "Enterprise mobile application for customer service representatives with offline support, data synchronization, and real-time notifications.",
-    
+    cvati_title: "Cvati.com - Professional CV Builder",
+    cvati_description: "A sophisticated web platform for creating professional CVs with AI-powered content suggestions, multiple templates, and export capabilities. Features real-time editing and collaborative tools.",
+
     // Additional Contact
-    whatsapp_number: "+971 55 37 202 37",
+    whatsapp_number: "+46 73 695 31 02",
     sweden_phone: "+46 73 695 31 02",
     
     // Navigation tooltips
@@ -243,7 +252,7 @@ const translations = {
     
     // Hero Section
     welcome: "مرحباً بكم في مساحتي الرقمية",
-    title_role: "مطورة متخصصة ومديرة إقليمية",
+    title_role: "مطور متكامل ومهندس ذكاء اصطناعي",
     hero_description: "ربط التميز التجاري بالتكنولوجيا المتطورة. من إدارة العمليات الإقليمية عبر الإمارات وقطر والأردن إلى إتقان التطوير الشامل مع خبرة في الذكاء الاصطناعي والتعلم الآلي.",
     download_cv: "تحميل السيرة الذاتية",
     get_in_touch: "تواصل معي",
@@ -324,11 +333,13 @@ const translations = {
     ritz_carlton: "فندق ريتز كارلتون",
     
     // Education Programs
+    engineer_ai_ml: "مهندس الذكاء الاصطناعي والتعلم الآلي", 
     ai_developer_program: "برنامج مطور الذكاء الاصطناعي",
     machine_learning_program: "برنامج التعلم الآلي",
     net_developer: "مطور دوت نت",
     mobile_web_developer: "مطور تطبيقات - الهاتف المحمول والويب",
     hospitality_diploma: "دبلوم عالي في إدارة الفنادق والضيافة",
+    iot_developer: "مطور أنظمة الأنظمة المدمجة (إنترنت الأشياء)", 
     
     // Schools
     iths: "المعهد التقني العالي",
@@ -397,6 +408,7 @@ const translations = {
     mobile_web_development: "تطوير تطبيقات الهاتف المحمول والويب",
     comprehensive_development: "برنامج شامل لتطوير الهاتف المحمول والويب",
     international_hospitality: "إدارة الضيافة الدولية وإدارة الأعمال",
+    iot_development: "تطوير الأنظمة المدمجة وإنترنت الأشياء",
     
     // Time periods
     december_2011_june_2019: "ديسمبر 2011 - يونيو 2019",
@@ -404,6 +416,7 @@ const translations = {
     december_2007_may_2010: "ديسمبر 2007 - مايو 2010",
     october_2006_november_2007: "أكتوبر 2006 - نوفمبر 2007",
     period_2024_2025: "2024 - 2025",
+    period_2024_2026: "2024 - 2026",
     period_ongoing: "مستمر",
     period_completed: "مكتمل",
     
@@ -431,10 +444,12 @@ const translations = {
     ml_dashboard_desc: "لوحة معلومات متقدمة لتصور البيانات لتوقعات نماذج التعلم الآلي مع التحليلات المباشرة ومقاييس الأداء والتقارير التلقائية.",
     hotel_management_desc: "حل شامل لإدارة الضيافة مع نظام الحجز وخدمات النزلاء وتنسيق التدبير المنزلي وتحسين الإيرادات.",
     mobile_customer_desc: "تطبيق هاتف محمول للمؤسسات لممثلي خدمة العملاء مع الدعم غير المتصل ومزامنة البيانات والإشعارات المباشرة.",
-    
+    cvati_title: "Cvati.com - منشئ السيرة الذاتية المهنية",
+    cvati_description: "منصة ويب متطورة لإنشاء السير الذاتية المهنية مع اقتراحات المحتوى المدعومة بالذكاء الاصطناعي، وقوالب متعددة، وإمكانيات التصدير. تتضمن التحرير في الوقت الفعلي والأدوات التعاونية.",
+
     // Additional Contact
-    whatsapp_number: "+971 55 37 202 37",
-    sweden_phone: "+46 73 695 31 02",
+    whatsapp_number: "02 31 695 73 0046",
+    sweden_phone: "02 31 695 73 0046",
     
     // Navigation tooltips
     tooltip_home: "الذهاب للرئيسية",
@@ -475,7 +490,7 @@ const translations = {
     
     // Hero Section
     welcome: "Välkommen till mitt digitala rum",
-    title_role: "Sofistikerad Utvecklare & Regional Manager",
+    title_role: "Fullstack-utvecklare & AI-ingenjör",
     hero_description: "Bygger broar mellan affärsexcellens och banbrytande teknik. Från att leda regionala verksamheter över UAE, Qatar och Jordanien till att behärska fullstack-utveckling med AI och maskininlärning.",
     download_cv: "Ladda ner CV",
     get_in_touch: "Kom i kontakt",
@@ -556,11 +571,13 @@ const translations = {
     ritz_carlton: "Ritz Carlton Hotel",
     
     // Education Programs
+    engineer_ai_ml: "Ingenjör AI och maskininlärning", 
     ai_developer_program: "AI-utvecklarprogram",
     machine_learning_program: "Maskininlärningsprogram",
     net_developer: ".Net-utvecklare",
     mobile_web_developer: "Applikationsutvecklare - Mobil & Webb",
     hospitality_diploma: "Högre diplom i Hotell & Gästfrihet Management",
+    iot_developer: "Systemutvecklare Inbyggda system (Internet of Things)",
     
     // Schools
     iths: "ITHS",
@@ -629,6 +646,7 @@ const translations = {
     mobile_web_development: "Mobil- och webbutveckling",
     comprehensive_development: "Omfattande mobil- och webbutvecklingsprogram",
     international_hospitality: "Internationell gästfrihet administration och företagsledning",
+    iot_development: "Inbyggda system och IoT-utveckling",
     
     // Time periods
     december_2011_june_2019: "December 2011 – Juni 2019",
@@ -636,6 +654,7 @@ const translations = {
     december_2007_may_2010: "December 2007 – Maj 2010",
     october_2006_november_2007: "Oktober 2006 – November 2007",
     period_2024_2025: "2024 - 2025",
+    period_2024_2026: "2024 - 2026",
     period_ongoing: "Pågående",
     period_completed: "Avslutad",
     
@@ -663,9 +682,11 @@ const translations = {
     ml_dashboard_desc: "Avancerad datavisualiseringsdashboard för ML-modellprediktioner med realtidsanalys, prestandamått och automatiserad rapportering.",
     hotel_management_desc: "Komplett gästfrihetslösning med bokningssystem, gästservice, städkoordinering och intäktsoptimering.",
     mobile_customer_desc: "Företagsmobilapplikation för kundservicerepresentanter med offline-stöd, datasynkronisering och realtidsnotiser.",
+    cvati_title: "Cvati.com - Professionell CV-byggare", 
+    cvati_description: "En sofistikerad webbplattform för att skapa professionella CV:n med AI-drivna innehållsförslag, flera mallar och exportfunktioner. Innehåller realtidsredigering och samarbetsverktyg.",
     
     // Additional Contact
-    whatsapp_number: "+971 55 37 202 37",
+    whatsapp_number: "+46 73 695 31 02",
     sweden_phone: "+46 73 695 31 02",
     
     // Navigation tooltips
