@@ -9,11 +9,11 @@ export default function FoodTerms() {
               Terms and Conditions
             </h1>
             <div className="text-lg text-gray-600 mb-2">
-              ScanMyFood & Cosmetics Checker
+              Giggli - Food Ingredients Scanner
             </div>
             <div className="text-sm text-gray-500">
-              <strong>Effective Date:</strong> January 1, 2024<br />
-              <strong>Last Updated:</strong> January 1, 2024
+              <strong>Effective Date:</strong> July 1, 2025<br />
+              <strong>Last Updated:</strong> July 1, 2025
             </div>
           </div>
         </div>
@@ -26,10 +26,10 @@ export default function FoodTerms() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Agreement to Terms</h2>
               <p className="text-gray-700 leading-relaxed">
-                By downloading, installing, or using ScanMyFood or Cosmetics Checker mobile applications (collectively, the "Apps"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the Apps.
+                By downloading, installing, or using Giggli - Food Ingredients Scanner or Cosmetics Checker mobile applications (collectively, the "Apps"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, do not use the Apps.
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
-                These Terms constitute a legally binding agreement between you and Zainab Adnan ("we," "us," or "Company").
+                These Terms constitute a legally binding agreement between you and ("we," "us," or "Company").
               </p>
             </section>
 
@@ -38,7 +38,7 @@ export default function FoodTerms() {
               <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Description of Service</h2>
               
               <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">ScanMyFood</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Giggli - Food Ingredients Scanner</h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   <li>Scans ingredient labels on food products</li>
                   <li>Identifies potentially harmful additives</li>
@@ -48,9 +48,9 @@ export default function FoodTerms() {
               </div>
 
               <div className="bg-purple-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">Cosmetics Checker</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Food Checker</h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
-                  <li>Scans ingredient labels on cosmetic products</li>
+                  <li>Scans ingredient labels on Food products</li>
                   <li>Identifies potentially harmful chemicals</li>
                   <li>Provides safety ratings and health information</li>
                   <li>Allows creation of custom ingredient blacklists</li>
@@ -192,9 +192,8 @@ export default function FoodTerms() {
                   For questions about these Terms:
                 </p>
                 <div className="text-gray-700 space-y-2">
-                  <p><strong>Email:</strong> legal@zadnan.com</p>
-                  <p><strong>Website:</strong> www.zadnan.com</p>
-                  <p><strong>In-App:</strong> Use the "Contact Support" feature</p>
+                  <p><strong>Email:</strong> zadnaniths@gmail.com</p>
+                  <p><strong>Website:</strong> www.zadnan.com</p> 
                 </div>
               </div>
             </section>
@@ -230,11 +229,11 @@ export default function FoodTerms() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-gray-500 text-sm">
-          <p>© 2024 Zainab Adnan. All rights reserved.</p>
+          <p>© 2025 Zainab Adnan. All rights reserved.</p>
           <p className="mt-2">
             For questions about these terms, contact us at{" "}
-            <a href="mailto:legal@zadnan.com" className="text-blue-600 hover:text-blue-800">
-              legal@zadnan.com
+            <a href="mailto:zadnaniths@gmail.com" className="text-blue-600 hover:text-blue-800">
+              zadnaniths@gmail.com
             </a>
           </p>
         </div>

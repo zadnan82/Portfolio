@@ -9,11 +9,11 @@ export default function FoodPrivacy() {
               Privacy Policy
             </h1>
             <div className="text-lg text-gray-600 mb-2">
-              ScanMyFood & Cosmetics Checker
+              Giggli - Food Ingredients Scanner
             </div>
             <div className="text-sm text-gray-500">
-              <strong>Effective Date:</strong> January 1, 2024<br />
-              <strong>Last Updated:</strong> January 1, 2024
+              <strong>Effective Date:</strong> July 1, 2025<br />
+              <strong>Last Updated:</strong> July 1, 2025
             </div>
           </div>
         </div>
@@ -26,8 +26,8 @@ export default function FoodPrivacy() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Introduction</h2>
               <p className="text-gray-700 leading-relaxed">
-                This Privacy Policy describes how Zainab Adnan ("we," "our," or "us") collects, uses, and shares 
-                information when you use our mobile applications ScanMyFood and Cosmetics Checker (collectively, the "Apps").
+                This Privacy Policy describes how ("we," "our," or "us") collects, uses, and shares 
+                information when you use our mobile applications Giggli - Food Ingredients Scanner (collectively, the "Apps").
               </p>
             </section>
 
@@ -168,9 +168,8 @@ export default function FoodPrivacy() {
                   If you have questions about this Privacy Policy or our data practices:
                 </p>
                 <div className="text-gray-700 space-y-2">
-                  <p><strong>Email:</strong> privacy@zadnan.com</p>
-                  <p><strong>Website:</strong> www.zadnan.com</p>
-                  <p><strong>In-App:</strong> Use the "Contact Support" feature in our Apps</p>
+                  <p><strong>Email:</strong> zadnaniths@gmail.com</p>
+                  <p><strong>Website:</strong> www.zadnan.com</p> 
                 </div>
               </div>
             </section>
@@ -233,11 +232,11 @@ export default function FoodPrivacy() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-gray-500 text-sm">
-          <p>© 2024 Zainab Adnan. All rights reserved.</p>
+          <p>© 2025 Zainab Adnan. All rights reserved.</p>
           <p className="mt-2">
             For questions about this policy, contact us at{" "}
-            <a href="mailto:privacy@zadnan.com" className="text-blue-600 hover:text-blue-800">
-              privacy@zadnan.com
+            <a href="mailto:zadnaniths@gmail.com" className="text-blue-600 hover:text-blue-800">
+              zadnaniths@gmail.com
             </a>
           </p>
         </div>
